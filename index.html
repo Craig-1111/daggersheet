@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Daggerheart Character Sheet</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="sheet">
+    <header>
+      <h1>Daggerheart Character Sheet</h1>
+    </header>
+
+    <section class="character-info box">
+      <div><label>Name: <input type="text" /></label></div>
+      <div><label>Heritage: <input type="text" /></label></div>
+      <div><label>Pronouns: <input type="text" /></label></div>
+      <div><label>Class & Subclass: <input type="text" /></label></div>
+      <div><label>Level: <input type="number" min="1" max="20" value="1" /></label></div>
+    </section>
+
+    <section class="evasion-armor box">
+      <div><label>Evasion: <input type="text" /></label></div>
+      <div><label>Armor: <input type="text" /></label></div>
+      <div>
+        <input type="checkbox">
+        <input type="checkbox">
+        <input type="checkbox">
+        <input type="checkbox">
+        <input type="checkbox">
+        <input type="checkbox">
+        <input type="checkbox">
+        <input type="checkbox">
+        <input type="checkbox">
+        <input type="checkbox">
+        <input type="checkbox">
+        <input type="checkbox">
+      </div>     
+    </section>
+
+    <section class="stats box">
+      <div class="grid">
+        <div class="stat"><label>Agility <input type="number" /></label></div>
+        <div class="stat"><label>Strength <input type="number" /></label></div>
+        <div class="stat"><label>Finesse <input type="number" /></label></div>
+        <div class="stat"><label>Instinct <input type="number" /></label></div>
+        <div class="stat"><label>Presence <input type="number" /></label></div>
+        <div class="stat"><label>Knowledge <input type="number" /></label></div>
+      </div>
+    </section>
+
+    <section class="damage-health box">
+      <h2>Damage & Health</h2>
+      <div>
+        <label>Minor Damage <input type="text" placeholder="" /></label>
+        <label>Major Damage <input type="text" placeholder="" /></label>
+        <label>Severe Damage</label>
+      </div>
+      <div>
+        <label>
+          HP
+          <input type="checkbox" />
+          <input type="checkbox" />
+          <input type="checkbox" />
+          <input type="checkbox" />
+          <input type="checkbox" />
+          <input type="checkbox" />
+          <input type="checkbox" />
+          <input type="checkbox" />
+          <input type="checkbox" />
+          <input type="checkbox" />
+          <input type="checkbox" />
+          <input type="checkbox" />
+        </label>
+        <label>
+          Stress
+          <input type="checkbox" />
+          <input type="checkbox" />
+          <input type="checkbox" />
+          <input type="checkbox" />
+          <input type="checkbox" />
+          <input type="checkbox" />
+          <input type="checkbox" />
+          <input type="checkbox" />
+          <input type="checkbox" />
+          <input type="checkbox" />
+          <input type="checkbox" />
+          <input type="checkbox" />
+        </label>
+      </div>
+    </section>
+
+    <section class="hope box">
+      <h2>Hope</h2>
+      <div>
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+      </div>
+      <div><label>Hope Feature: <input type="number" /></label></div>
+    </section>
+
+    <section class="experience box">
+      <h2>Experience</h2>
+      <div>
+        <input type="text" /><input type="number" /><br>
+        <input type="text" /><input type="number" /><br>
+        <input type="text" /><input type="number" /><br>
+        <input type="text" /><input type="number" /><br>
+        <input type="text" /><input type="number" /><br>
+      </div>
+    </section>
+
+    <section class="active-weapons box">
+      <h2>Active Weapons <input type="checkbox" /><input type="checkbox" /></h2>
+      <div>
+        <div>
+          <label>
+            Proficiency
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+          </label>
+        </div>
+        <hr>
+        <div>
+          <label>
+            <h3>Primary</h3>
+            <label>Name <input type="text" /></label>
+            <label>Trait & Range <input type="text" /></label>
+            <label>Damage Dice & Type <input type="text" /></label>
+            <label>Feature <input type="text" /></label>
+          </label>
+        </div>
+        <hr>
+        <div>
+          <label>
+            <h3>Secondary</h3>
+            <label>Name <input type="text" /></label>
+            <label>Trait & Range <input type="text" /></label>
+            <label>Damage Dice & Type <input type="text" /></label>
+            <label>Feature <input type="text" /></label>
+          </label>
+        </div>
+      </div>
+    </section>
+
+    <section class="active-armor box">
+      <h2>Active Armor</h2>
+        <div>
+          <label>Name <input type="text" /></label>
+          <label>Base Thresholds <input type="text" /></label>
+          <label>Base Score <input type="text" /></label>
+          <label>Feature <input type="text" /></label>
+        </div>
+    </section>
+
+    <section class="gold box">
+      <h2>Gold</h2>
+        <div>
+          <label>
+            Handfuls
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+          </label>
+          <label>
+            Bags
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+          </label>
+          <label>
+            Chest
+            <input type="checkbox" />
+          </label>
+        </div>
+    </section>
+
+    <section class="inventory box">
+      <h2>Inventory</h2>
+      <div>
+        <input type="text" />
+      </div>
+      <hr>
+      <div>
+        <div>
+          <label>
+            <h3>Inventory Weapon<input type="checkbox" /><input type="checkbox" /><input type="radio" /><input type="radio" /></h3>
+            <label>Name <input type="text" /></label>
+            <label>Trait & Range <input type="text" /></label>
+            <label>Damage Dice & Type <input type="text" /></label>
+            <label>Feature <input type="text" /></label>
+          </label>
+        </div>
+        <hr>
+        <div>
+          <label>
+            <h3>Inventory Weapon<input type="checkbox" /><input type="checkbox" /><input type="radio" /><input type="radio" /></h3>
+            <label>Name <input type="text" /></label>
+            <label>Trait & Range <input type="text" /></label>
+            <label>Damage Dice & Type <input type="text" /></label>
+            <label>Feature <input type="text" /></label>
+          </label>
+        </div>
+      </div>
+    </section>
+
+    <section class="class-feature box">
+      <h2>Class Feature</h2>
+      <div>
+        <input type="text" />
+      </div>
+    </section>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
