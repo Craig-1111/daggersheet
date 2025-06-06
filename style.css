@@ -8,15 +8,18 @@
 body {
   font-family: sans-serif;
   background-color: #f5f5f5;
-  padding: 2rem;
+  padding: 0.5rem;
+  padding-top: 2rem;
 }
 
 .sheet {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  row-gap: 5px;
+  column-gap: 5px;
   margin: 0 auto;
   background-color: white;
-  max-width: 1400px;
+  max-width: 1200px;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
@@ -57,6 +60,13 @@ body {
   grid-template-columns: auto auto;
   margin: 5px;
   gap: 5px;
+}
+
+:root{
+  --md-filled-text-field-container-color: white;
+  --md-filled-text-field-input-text-size: 1.5rem;
+  --md-filled-text-field-focus-label-text-color: black;
+  --md-filled-text-field-focus-supporting-text-color: black;
 }
 
 :root{
@@ -200,4 +210,151 @@ body {
   text-align: center;
 }
 
+/*------------Damage & Health------------*/
+#damage-health-box{
+  display: grid;
+  grid-template-rows: 60px 1fr 1fr;
+  border: 2px solid black;
+  border-radius: 10px;
+  padding: 5px;
+}
 
+#damage-health-title{
+  text-align: center;
+}
+
+#damage-health-title h2{
+  font-weight: 800;
+}
+
+#m-m-s-damage{
+  display: grid;
+  grid-template-columns: 2fr 1fr 2fr 1fr 2fr;
+  text-align: center;
+}
+
+#m-m-s-damage input {
+  width: 100%;
+  max-width: 100px;
+  text-align: center;
+  font-size: 2rem;
+}
+
+#m-m-s-damage div{
+  background-color: hsl(0, 0%, 25%);
+  color: white;
+}
+
+/*------------HP & Stress------------*/
+#hp-stress{
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  padding: 5px;
+}
+
+#hp-stress input{
+  width: 20px;
+  height: 20px;
+}
+
+/*------------Hope------------*/
+#hope-box{
+  grid-column: 1;
+  border: 2px solid black;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+#hope-title{
+  text-align: center;
+}
+
+#hope-title h2{
+  font-weight: 800;
+}
+
+#hope-checkbox-box{
+  text-align: center;
+  margin: 3px;
+}
+
+#hope-checkbox-box input{
+  margin: 3px;
+  width: 20px;
+  height: 20px;
+}
+
+.full-width-field{
+  display: block;
+  width: 100%;
+}
+
+/*------------Experience------------*/
+#experience-box{
+  grid-column: 1;
+  border: 2px solid black;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+#experience-title{
+  text-align: center;
+}
+
+#experience-title h2{
+  font-weight: 800;
+}
+
+/*------------Active Weapons------------*/
+#active-weapons-box{
+  grid-column: 2;
+  grid-row: 3;
+  border: 2px solid black;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+#active-weapons-title{
+  text-align: center;
+}
+
+#active-weapons-title h2{
+  font-weight: 800;
+}
+
+#active-weapons-title input{
+  width: 20px;
+  height: 20px;
+}
+
+#active-weapons-h2 input{
+  margin: 5px;
+}
+
+#weapon-first-line{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+/*------------Active Armor------------*/
+#active-armor-box{
+  grid-column: 2;
+  grid-row: 4;
+  border: 2px solid black;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+#active-armor-title{
+  text-align: center;
+}
+
+#active-armor-title h2{
+  font-weight: 800;
+}
+
+/*------------Testing------------*/
+#inputTest{
+  border: none;
+  border-bottom: 2px solid black;
+}

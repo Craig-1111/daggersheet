@@ -1,0 +1,7 @@
+1. Reformat with flex box vs grid. Grid is fine for the top 2, then make a 
+right + left side box and just dump everything inside of them and see if they fit nicely?
+Could make pop outs for descriptions or anything over the assigned text limit to make the 
+sheet not wonky 
+2. Make people able to save what they put on sheets, as well as what other people have done. 
+so something like a cloud database. start with firebase I think and then work out from there
+3. DiceRolling + chat log

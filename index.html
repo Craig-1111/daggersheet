@@ -32,13 +32,10 @@
       </div>
       <div id="character-info-box-middle">
         <div class="character-info-input-box">
-          <md-outlined-text-field label="Name" style="
-              --md-outlined-text-field-container-color: white;
-            ">
-          </md-outlined-text-field>
-          <md-outlined-text-field label="Pronouns"></md-outlined-text-field>
-          <md-outlined-text-field label="Heritage"></md-outlined-text-field>
-          <md-outlined-text-field label="Class & Subclass"></md-outlined-text-field>
+          <md-filled-text-field label="Name"></md-filled-text-field>
+          <md-filled-text-field label="Pronouns"></md-filled-text-field>
+          <md-filled-text-field label="Heritage"></md-filled-text-field>
+          <md-filled-text-field label="Class & Subclass"></md-filled-text-field>
         </div>
       </div>
       <div id="character-info-box-right">
@@ -77,24 +74,97 @@
       </div>
     </section>
 
-<!------------------------------------------------------------------------------->
-
-    <section class="damage-health box">
-      <h2>Damage & Health</h2>
-      <div>
-        <label>Minor Damage <input type="text" placeholder="" /></label>
-        <label>Major Damage <input type="text" placeholder="" /></label>
-        <label>Severe Damage</label>
+<!--Damage & Health----------------------------------------------------------------------------->
+    <section id="damage-health-box">
+      <div id="damage-health-title">
+        <h2 id="damage-health-h2">DAMAGE & HEALTH</h2>
+        <p>Add your current level to your damage thresholds</p>
       </div>
-      <div>
+      <div id="m-m-s-damage">
+        <div class="damage-div">
+          <h3>MINOR DAMAGE</h3>
+          <p>Mark 1 HP</p>
+        </div>
+        <input type="number">
+        <div class="damage-div">
+          <h3>MAJOR DAMAGE</h3>
+          <p>Mark 2 HP</p>
+        </div>
+        <input type="number">
+        <div class="damage-div">
+          <h3>SEVERE DAMAGE</h3>
+          <p>Mark 3 HP</p>
+        </div>
+      </div>
+<!--HP----------------------------------------------------------------------------->
+      <div id="hp-stress">
         <label>
-          HP
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
+          HP 
+          <input type="checkbox" id="hp1" class="hp" />
+          <input type="checkbox" id="hp2" class="hp" />
+          <input type="checkbox" id="hp3" class="hp" />
+          <input type="checkbox" id="hp4" class="hp" />
+          <input type="checkbox" id="hp5" class="hp" />
+          <input type="checkbox" id="hp6" class="hp" />
+          <input type="checkbox" id="hp7" class="hp" />
+          <input type="checkbox" id="hp8" class="hp" />
+          <input type="checkbox" id="hp9" class="hp" />
+          <input type="checkbox" id="hp10" class="hp" />
+          <input type="checkbox" id="hp11" class="hp" />
+          <input type="checkbox" id="hp12" class="hp" />
+        </label>
+<!--HP----------------------------------------------------------------------------->
+        <label>
+          STRESS 
+          <input type="checkbox" id="s1" class="stress" />
+          <input type="checkbox" id="s2" class="stress" />
+          <input type="checkbox" id="s3" class="stress" />
+          <input type="checkbox" id="s4" class="stress" />
+          <input type="checkbox" id="s5" class="stress" />
+          <input type="checkbox" id="s6" class="stress" />
+          <input type="checkbox" id="s7" class="stress" />
+          <input type="checkbox" id="s8" class="stress" />
+          <input type="checkbox" id="s9" class="stress" />
+          <input type="checkbox" id="s10" class="stress" />
+          <input type="checkbox" id="s11" class="stress" />
+          <input type="checkbox" id="s12" class="stress" />
+        </label>
+      </div>
+    </section>
+<!--Hope----------------------------------------------------------------------------->
+    <section id="hope-box">
+      <div id="hope-title">
+        <h2>HOPE</h2>
+        <p>Add your current level to your damage thresholds</p>
+      </div>
+      <div id="hope-checkbox-box">
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+      </div>
+      <md-outlined-text-field label="HOPE FEATURE" class="full-width-field"></md-outlined-text-field>
+    </section>
+<!--Experience----------------------------------------------------------------------------->
+    <section id="experience-box">
+      <div id="experience-title"><h2>EXPERIENCE</h2></div>
+      <div>
+        <md-outlined-text-field class="full-width-field"></md-outlined-text-field>
+        <md-outlined-text-field class="full-width-field"></md-outlined-text-field>
+        <md-outlined-text-field class="full-width-field"></md-outlined-text-field>
+        <md-outlined-text-field class="full-width-field"></md-outlined-text-field>
+        <md-outlined-text-field class="full-width-field"></md-outlined-text-field>
+      </div>
+    </section>
+
+<!--Active Weapons----------------------------------------------------------------------------->
+    <section id="active-weapons-box">
+      <div id="active-weapons-title">
+        <h2 id="active-weapons-h2">ACTIVE WEAPONS<input type="checkbox"><input type="checkbox"></h2>
+        <label>
+          PROFICIENCY
           <input type="checkbox" />
           <input type="checkbox" />
           <input type="checkbox" />
@@ -102,93 +172,39 @@
           <input type="checkbox" />
           <input type="checkbox" />
         </label>
-        <label>
-          Stress
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-        </label>
       </div>
-    </section>
-
-    <section class="hope box">
-      <h2>Hope</h2>
-      <div>
-        <input type="checkbox" />
-        <input type="checkbox" />
-        <input type="checkbox" />
-        <input type="checkbox" />
-        <input type="checkbox" />
-        <input type="checkbox" />
-      </div>
-      <div><label>Hope Feature: <input type="number" /></label></div>
-    </section>
-
-    <section class="experience box">
-      <h2>Experience</h2>
-      <div>
-        <input type="text" /><input type="number" /><br>
-        <input type="text" /><input type="number" /><br>
-        <input type="text" /><input type="number" /><br>
-        <input type="text" /><input type="number" /><br>
-        <input type="text" /><input type="number" /><br>
-      </div>
-    </section>
-
-    <section class="active-weapons box">
-      <h2>Active Weapons <input type="checkbox" /><input type="checkbox" /></h2>
       <div>
         <div>
-          <label>
-            Proficiency
-            <input type="checkbox" />
-            <input type="checkbox" />
-            <input type="checkbox" />
-            <input type="checkbox" />
-            <input type="checkbox" />
-            <input type="checkbox" />
-          </label>
+          <h3>PRIMARY</h3>
+          <div id="weapon-first-line">
+            <md-outlined-text-field label="NAME" class="full-width-field"></md-outlined-text-field>
+            <md-outlined-text-field label="TRAIT & RANGE" class="full-width-field"></md-outlined-text-field>
+            <md-outlined-text-field label="DAMAGE DICE & TYPE" class="full-width-field"></md-outlined-text-field>
+          </div>
+          <md-outlined-text-field label="FEATURE" class="full-width-field"></md-outlined-text-field>
         </div>
-        <hr>
         <div>
-          <label>
-            <h3>Primary</h3>
-            <label>Name <input type="text" /></label>
-            <label>Trait & Range <input type="text" /></label>
-            <label>Damage Dice & Type <input type="text" /></label>
-            <label>Feature <input type="text" /></label>
-          </label>
-        </div>
-        <hr>
-        <div>
-          <label>
-            <h3>Secondary</h3>
-            <label>Name <input type="text" /></label>
-            <label>Trait & Range <input type="text" /></label>
-            <label>Damage Dice & Type <input type="text" /></label>
-            <label>Feature <input type="text" /></label>
-          </label>
+          <h3>SECONDARY</h3>
+          <div id="weapon-first-line">
+            <md-outlined-text-field label="NAME" class="full-width-field"></md-outlined-text-field>
+            <md-outlined-text-field label="TRAIT & RANGE" class="full-width-field"></md-outlined-text-field>
+            <md-outlined-text-field label="DAMAGE DICE & TYPE" class="full-width-field"></md-outlined-text-field>
+          </div>
+          <md-outlined-text-field label="FEATURE" class="full-width-field"></md-outlined-text-field>
         </div>
       </div>
     </section>
-
-    <section class="active-armor box">
-      <h2>Active Armor</h2>
-        <div>
-          <label>Name <input type="text" /></label>
-          <label>Base Thresholds <input type="text" /></label>
-          <label>Base Score <input type="text" /></label>
-          <label>Feature <input type="text" /></label>
+<!--Active Armor----------------------------------------------------------------------------->
+    <section id="active-armor-box">
+      <div id="active-armor-title"><h2>ACTIVE ARMOR<input type="text" id="inputTest"></h2></div>
+      <div>
+        <div id="weapon-first-line">
+          <md-outlined-text-field label="NAME" class="full-width-field"></md-outlined-text-field>
+          <md-outlined-text-field label="TRAIT & RANGE" class="full-width-field"></md-outlined-text-field>
+          <md-outlined-text-field label="DAMAGE DICE & TYPE" class="full-width-field"></md-outlined-text-field>
         </div>
+        <md-outlined-text-field label="FEATURE" class="full-width-field"></md-outlined-text-field>
+      </div>
     </section>
 
     <section class="gold box">
