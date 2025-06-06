@@ -5,72 +5,79 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>DaggerSheet</title>
   <link rel="stylesheet" href="style.css" />
+  <script type="importmap">
+    {
+      "imports": {
+        "@material/web/": "https://esm.run/@material/web/"
+      }
+    }
+  </script>
+  <script type="module">
+    import '@material/web/all.js';
+    import {styles as typescaleStyles} from '@material/web/typography/md-typescale-styles.js';
+
+    document.adoptedStyleSheets.push(typescaleStyles.styleSheet);
+  </script>
 </head>
 <body>
   <div class="sheet">
+
+<!--Character Information Header------------------------------------------------------------------------>
     <section id="character-info-box">
       <div id="character-info-box-left">
         <div>
-          <h1>DaggerHeart</h1>
+          <h1 id="character-info-box-left-h1">DaggerHeart</h1>
           <p>Compatible Character Sheet</p>
         </div>
       </div>
       <div id="character-info-box-middle">
         <div class="character-info-input-box">
-          <div class="input-wrapper">
-            <label for="name">Name</label>
-            <input type="text" id="name" />
-          </div>
-          <div class="input-wrapper">
-            <label for="pronouns">Pronouns</label>
-            <input type="text" id="pronouns" />
-          </div>
-          <div class="input-wrapper">
-            <label for="heritage">Heritage</label>
-            <input type="text" id="heritage" />
-          </div>
-          <div class="input-wrapper">
-            <label for="class">Class & Subclass</label>
-            <input type="text" id="class" />
-          </div>
+          <md-outlined-text-field label="Name" style="
+              --md-outlined-text-field-container-color: white;
+            ">
+          </md-outlined-text-field>
+          <md-outlined-text-field label="Pronouns"></md-outlined-text-field>
+          <md-outlined-text-field label="Heritage"></md-outlined-text-field>
+          <md-outlined-text-field label="Class & Subclass"></md-outlined-text-field>
         </div>
       </div>
       <div id="character-info-box-right">
-        <div>
-          Level
+        <div id="level"><label><input type="number" />level</label></div>
+      </div>
+    </section>
+
+<!--Evasion/Armor----------------------------------------------------------------------------->
+    <section id="evasion-armor-traits-box">
+      <div id="evasion-armor">
+        <div id="evasion"><label><input type="number" />Evasion</label></div>
+        <div id="armor"><label><input type="number" />Armor</label></div>
+        <div id="armor-slots">
+          <input type="checkbox">
+          <input type="checkbox">
+          <input type="checkbox">
+          <input type="checkbox">
+          <input type="checkbox">
+          <input type="checkbox">
+          <input type="checkbox">
+          <input type="checkbox">
+          <input type="checkbox">
+          <input type="checkbox">
+          <input type="checkbox">
+          <input type="checkbox">
         </div>
       </div>
-    </section>
-
-    <section class="evasion-armor box">
-      <div><label>Evasion: <input type="text" /></label></div>
-      <div><label>Armor: <input type="text" /></label></div>
-      <div>
-        <input type="checkbox">
-        <input type="checkbox">
-        <input type="checkbox">
-        <input type="checkbox">
-        <input type="checkbox">
-        <input type="checkbox">
-        <input type="checkbox">
-        <input type="checkbox">
-        <input type="checkbox">
-        <input type="checkbox">
-        <input type="checkbox">
-        <input type="checkbox">
-      </div>     
-    </section>
-
-    <section class="stats box">
-      <div class="grid">
-        <div class="stat"><label>Agility <input type="number" /></label></div>
-        <div class="stat"><label>Strength <input type="number" /></label></div>
-        <div class="stat"><label>Finesse <input type="number" /></label></div>
-        <div class="stat"><label>Instinct <input type="number" /></label></div>
-        <div class="stat"><label>Presence <input type="number" /></label></div>
-        <div class="stat"><label>Knowledge <input type="number" /></label></div>
+<!--Traits----------------------------------------------------------------------------->
+      <div id="traits">
+        <div class="trait"><label>Agility<input type="number" /></label></div>
+        <div class="trait"><label>Strength<input type="number" /></label></div>
+        <div class="trait"><label>Finesse<input type="number" /></label></div>
+        <div class="trait"><label>Instinct<input type="number" /></label></div>
+        <div class="trait"><label>Presence<input type="number" /></label></div>
+        <div class="trait"><label>Knowledge<input type="number" /></label></div>
       </div>
     </section>
+
+<!------------------------------------------------------------------------------->
 
     <section class="damage-health box">
       <h2>Damage & Health</h2>
