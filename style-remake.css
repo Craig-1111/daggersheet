@@ -141,7 +141,6 @@ body{
 /*Evasion and Armor -------------------------------------------------------------*/
 #secondary-sheet-header__evasion-armor{
   display: flex;
-  flex-grow: 1;
   border-right: 2px solid #6c6d70;
 }
 
@@ -154,13 +153,16 @@ body{
 
 /*Armor Slots -------------------------------------------------------------*/
 #armor-slot-grid{
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 120px;
+  max-height: 100px;
   margin-left: 15px;
-  margin-right: 15px;
+  margin-right:15px;
 }
 
 #armor-slot-grid .armor-slot-box{
+  flex: 1 1 25%;
   aspect-ratio: 1 / 1;
   display: flex;
   justify-content: center;
@@ -171,6 +173,33 @@ body{
 }
 
 /*Traits -------------------------------------------------------------*/
+#secondary-sheet-header__traits{
+  display: flex;
+  margin-left: 15px;
+  gap: 5px;
+}
+
+.trait-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.trait-container p{
+  position: relative;
+  transform: translate(-5%, 0);
+  font-size: .85rem;
+  font-weight: 400;
+  color: #3e3e3f;
+}
+
+#trait-agility{
+  transform: translate(-195%, 55%);
+}
+
+
+
 
 
 
