@@ -165,7 +165,7 @@
           <div id="damage-thresholds__container">
             <img src="images/Damage-Thresholds.png" width="500px">
             <input class="damage-thresholds__input" id="damage-thresholds__input1">
-            <input class="damage-thresholds__input" id="damage-thresholds__input1">
+            <input class="damage-thresholds__input" id="damage-thresholds__input2">
             <div class="damage-thresholds__p" id="damage-thresholds__p1"><p>Mark 1 HP</p></div>
             <div class="damage-thresholds__p" id="damage-thresholds__p2"><p>Mark 2 HP</p></div>
             <div class="damage-thresholds__p" id="damage-thresholds__p3"><p>Mark 3 HP</p></div>
@@ -204,11 +204,59 @@
 
         <!--Hope---------------------------------->
         <div id="hope__container" class="character-sheet-body__container">
-          <!--Damage and Health Title -->
-          <div id="damage-health__title" class="character-sheet-body__container-title"><img src="images/Damage-Health-Title-No-Bkg.png" width="400px" class="character-sheet-body__container-title__img"></div>
+          <!--Hope Title -->
+          <div id="hope__title" class="character-sheet-body__container-title"><img src="images/Hope-Title-No-Bkg.png" width="400px" class="character-sheet-body__container-title__img"></div>
           <div class="character-sheet-body__container-desc">
-            <p>Add your current level to your damage thresholds.</p>
+            <p>Spend a Hope to use an experience or help an ally.</p>
           </div>
+          <div id="hope-holder__container">
+            <img id="hope-holder-box" src="images/Hope-Slot-Holder.png" height="35px">
+            <img class="hope-slot" id="hope-slot1" src="images/Hope-Slot-Empty.png" height="35px">
+            <img class="hope-slot" id="hope-slot2" src="images/Hope-Slot-Empty.png" height="35px">
+            <img class="hope-slot" id="hope-slot3" src="images/Hope-Slot-Empty.png" height="35px">
+            <img class="hope-slot" id="hope-slot4" src="images/Hope-Slot-Empty.png" height="35px">
+            <img class="hope-slot" id="hope-slot5" src="images/Hope-Slot-Empty.png" height="35px">
+            <img class="hope-slot" id="hope-slot6" src="images/Hope-Slot-Empty.png" height="35px">
+          </div>
+          <div id="hope-feature__container" class="character-sheet__text-box">
+            <input id="hope-feature__input" class="character-sheet__text-line">
+            <label id="hope-feature__label" class="character-sheet__text-line-label">HOPE FEATURE</label>
+          </div>
+        </div>
+
+        <!--Experience-->
+        <div id="experience__container" class="character-sheet-body__container">
+          <div id="experience__title" class="character-sheet-body__container-title"><img src="images/Experience-Title-No-Bkg.png" width="400px" class="character-sheet-body__container-title__img"></div>
+          <div id="experience__text1" class="experience-text__box">
+            <input class="experience-text__desc character-sheet__text-line">
+            <input class="experience-text__bonus character-sheet__text-line">
+          </div>
+          <div class="experience-text__box">
+            <input class="experience-text__desc character-sheet__text-line">
+            <input class="experience-text__bonus character-sheet__text-line">
+          </div>
+          <div class="experience-text__box">
+            <input class="experience-text__desc character-sheet__text-line">
+            <input class="experience-text__bonus character-sheet__text-line">
+          </div>
+          <div class="experience-text__box">
+            <input class="experience-text__desc character-sheet__text-line">
+            <input class="experience-text__bonus character-sheet__text-line">
+          </div>
+          <div class="experience-text__box">
+            <input class="experience-text__desc character-sheet__text-line">
+            <input class="experience-text__bonus character-sheet__text-line">
+          </div>
+        </div>
+
+        <!--Class Features---------->
+        <div id="class-features__container" class="character-sheet-body__container">
+          <div id="class-features__title" class="character-sheet-body__container-title"><img src="images/Experience-Title-No-Bkg.png" width="400px" class="character-sheet-body__container-title__img"></div>
+          <input id="class-features__desc1" class="class-features__desc character-sheet__text-line">
+          <input class="class-features__desc character-sheet__text-line">
+          <input class="class-features__desc character-sheet__text-line">
+          <input class="class-features__desc character-sheet__text-line">
+          <input class="class-features__desc character-sheet__text-line">
         </div>
       </div> <!--End of Character Sheet Left-->
 
@@ -217,9 +265,94 @@
 
         <!--Active Weapons---------------------------------->
         <div id="active-weapons__container" class="character-sheet-body__container">
+          <div id="active-weapons__title" class="character-sheet-body__container-title-top">
+            <img src="images/Active-Weapons-Title-No-Bkg.png" width="400px" class="character-sheet-body__container-title__img">
+            <img> <!-- background-->
+            <img> <!-- 2 hands -->
+            <img> <!-- 2 hands -->
+            <img> <!-- prof -->
+            <img> <!-- prof -->
+            <img> <!-- prof -->
+            <img> <!-- prof -->
+            <img> <!-- prof -->
+          </div>
+          <div id="primary-weapon__container" class="weapon__container">
+            <div id="primary-weapon__title-box" class="weapon__title-box">
+             <p class="weapon-title__main">PRIMARY</p>
+            </div>
+            <div id="primary-weapon__desc-box" class="weapon__desc-box">
+              <div id="primary-weapon__name" class="weapon__name">
+                <input id="primary-weapon__name-input" class="character-sheet__text-line weapon__name-input">
+                <label id="primary-weapon__name-label" class="character-sheet__text-line-label  ">NAME</label>
+              </div>
+              <div id="primary-weapon__trait-range" class="weapon__trait-range">
+                <input id="primary-weapon__trait-range-input" class="character-sheet__text-line weapon__trait-range-input" >
+                <label id="primary-weapon__trait-range-label" class="character-sheet__text-line-label weapon__trait-range-label">TRAIT & RANGE</label>
+              </div>
+              <div id="primary-weapon__damage-type" class="weapon__damage-type">
+                <input id="primary-weapon__damage-type-input" class="character-sheet__text-line weapon__damage-type-input">
+                <label id="primary-weapon__damage-type-label" class="character-sheet__text-line-label weapon__damage-type-label">DAMAGE DICE & TYPE</label>
+              </div>
+            </div>
+            <div id="primary-weapon__feature-box" class="weapon__feature-box">
+              <input id="primary-weapon__feature-input" class="character-sheet__text-line">
+                <label id="primary-weapon__feature-label" class="character-sheet__text-line-label">FEATURE</label>
+            </div>
+          </div>
 
+          <!--Secondary Weapon-->
+          <div id="secondary-weapon__container" class="weapon__container">
+            <div id="secondary-weapon__title-box" class="weapon__title-box">
+             <p class="weapon-title__main">SECONDARY</p>
+            </div>
+            <div id="secondary-weapon__desc-box" class="weapon__desc-box">
+              <div id="secondary-weapon__name" class="weapon__name">
+                <input id="secondary-weapon__name-input" class="character-sheet__text-line weapon__name-input">
+                <label id="secondary-weapon__name-label" class="character-sheet__text-line-label">NAME</label>
+              </div>
+              <div id="secondary-weapon__trait-range" class="weapon__trait-range">
+                <input id="secondary-weapon__trait-range-input" class="character-sheet__text-line weapon__trait-range-input" >
+                <label id="secondary-weapon__trait-range-label" class="character-sheet__text-line-label weapon__trait-range-label">TRAIT & RANGE</label>
+              </div>
+              <div id="secondary-weapon__damage-type" class="weapon__damage-type">
+                <input id="secondary-weapon__damage-type-input" class="character-sheet__text-line weapon__damage-type-input">
+                <label id="secondary-weapon__damage-type-label" class="character-sheet__text-line-label weapon__damage-type-label">DAMAGE DICE & TYPE</label>
+              </div>
+            </div>
+            <div id="secondary-weapon__feature-box" class="weapon__feature-box">
+              <input id="secondary-weapon__feature-input" class="character-sheet__text-line">
+                <label id="secondary-weapon__feature-label" class="character-sheet__text-line-label">FEATURE</label>
+            </div>
+          </div>
         </div>
-      </div>
+
+        <!--Active Armor-->
+        <div id="active-armor__container" class="character-sheet-body__container">
+          <div id="active-armor__title" class="character-sheet-body__container-title"><img src="images/Experience-Title-No-Bkg.png" width="400px" class="character-sheet-body__container-title__img"></div>
+          <div class="weapon__container armor__container">
+            <div  class="weapon__desc-box armor__desc-box">
+              <div class="weapon__name">
+                <input class="character-sheet__text-line weapon__name-input">
+                <label class="character-sheet__text-line-label">NAME</label>
+              </div>
+              <div class="weapon__trait-range">
+                <input class="character-sheet__text-line weapon__trait-range-input" >
+                <label class="character-sheet__text-line-label weapon__trait-range-label">TRAIT & RANGE</label>
+              </div>
+              <div class="weapon__damage-type">
+                <input class="character-sheet__text-line weapon__damage-type-input">
+                <label class="character-sheet__text-line-label weapon__damage-type-label">DAMAGE DICE & TYPE</label>
+              </div>
+            </div>
+            <div class="weapon__feature-box">
+              <input class="character-sheet__text-line">
+                <label class="character-sheet__text-line-label">FEATURE</label>
+            </div>
+          </div>
+        </div>
+
+
+      </div> <!-- ENd of Right-->
     </div>
   </div>
   <script src="script.js"></script>

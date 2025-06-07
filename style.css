@@ -265,7 +265,7 @@ input{
   flex-direction: column;
   align-items: center;
   text-align: center;
-  gap: 5px;
+  gap: 15px;
   padding: 10px;
 }
 
@@ -342,14 +342,13 @@ input{
 #damage-thresholds__input1{
   transform: translate(-365px, 9px);
 }
-#damage-thresholds__input1{
+#damage-thresholds__input2{
   transform: translate(-185px, 9px);
 }
 
 #hp__container{
   display: flex;
   width: 500px;
-  margin-top: 10px;
   align-items: center;
   justify-content: space-between;
 }
@@ -366,7 +365,6 @@ input{
 #stress__container{
   display: flex;
   width: 500px;
-  margin-top: 10px;
   align-items: center;
   justify-content: space-between;
 }
@@ -387,10 +385,175 @@ input{
 
 /*Hope -------------------------------------------------------------*/
 
+#hope__container{
+  padding-bottom: 20px;
+}
 
 
+#hope-holder__container{
+  display: flex;
+
+}
+
+.hope-slot{
+  position: absolute;
+  cursor: pointer;
+}
+#hope-slot6{
+  transform: translate(390px, 0);
+}
+#hope-slot5{
+  transform: translate(317px, 0);
+}
+#hope-slot4{
+  transform: translate(243px, 0);
+}
+#hope-slot3{
+  transform: translate(170px, 0);
+}
+#hope-slot2{
+  transform: translate(97px, 0);
+}
+#hope-slot1{
+  transform: translate(24px, 0);
+}
+
+#hope-feature__container{
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.character-sheet__text-line{
+  width: 100%;
+  background-color: transparent;
+  font-size: 1.5rem;
+  border: none;
+  border-bottom: 2px solid #a8a9ad;
+  font-weight: 600;
+  height: 40px;
+  padding-left: 5px;
+  /*Words =#231f20 */
+  /* #a8a9ad  */
+}
+
+.character-sheet__text-line-label{
+  margin-left: 10px;
+  color: #3e3e3f;
+  font-weight: 800;
+  font-size: 0.85rem;
+}
+
+/*Experience -------------------------------------------------------------*/
+/* 1320 x 114 #c7c8ca */
+#experience__container{
+ padding-bottom: 20px;
+}
+
+#experience__text1{
+  margin-top: 10px;
+}
+
+.experience-text__box{
+  display: flex;
+}
+
+.experience-text__desc{
+  flex: 8;
+  text-align: right;
+  padding-right: 5px;
+  border-bottom: 2px solid #a8a9ad;
+  border-right: 2px dotted #a8a9ad;
+}
+.experience-text__bonus{
+  flex: 2;
+  border-bottom: 2px solid #a8a9ad;
+}
+
+/*Class Features -------------------------------------------------------------*/
+#class-features__container{
+  padding-bottom: 20px;
+}
+
+#class-features__desc1{
+  margin-top: 10px;
+}
+
+.class-features__desc{
+  max-width: 500px;
+}
 
 
+/*Active Weapons -------------------------------------------------------------*/
+
+#active-weapons__container{
+padding-bottom: 20px;
+}
+
+#primary-weapon__container{
+  margin-top: 40px; /* Cause of the weird shaped title */
+}
+
+.weapon__container{
+  display: flex;
+  flex-direction: column;
+}
+
+.weapon__title-box{
+  display: flex;
+}
+
+.weapon-title__main{
+  color: #3e3e3f;
+  font-weight: 900;
+  font-size: 1.2rem;
+
+}
+
+.weapon__desc-box{
+  display: flex;
+}
+
+.weapon__name{
+  flex: 4; /*40% */
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.weapon__trait-range{
+  flex: 3; /*30% */
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+.weapon__trait-range-input{
+  border-left: 2px dotted #a8a9ad;
+}
+.weapon__trait-range-label{
+  margin-left: 5px;
+}
+
+.weapon__damage-type{
+  flex: 3; /*30% */
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+.weapon__damage-type-input{
+  border-left: 2px dotted #a8a9ad;
+}
+.weapon__damage-type-label{
+  margin-left: 5px;
+}
+.weapon__feature-box{
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+}
+
+/*Active Armor -------------------------------------------------------------*/
 
 
 

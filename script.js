@@ -22,6 +22,20 @@ document.querySelectorAll('.armor-slot').forEach(slot => {
   });
 });
 
+// Button For Hope-----------------------------------------------------
+document.querySelectorAll('.hope-slot').forEach(slot => {
+  slot.addEventListener('click', () => {
+    const selected = slot.dataset.selected === 'true';
+
+    slot.dataset.selected = !selected;
+    slot.src = selected
+      ? 'images/Hope-Slot-Empty.png'
+      : 'images/Hope-Slot-Full-Test-12px-2.png';
+  });
+});
+
+
+
 // HP / Stress Button-----------------------------------------------------
 function hpStressSlots(){
   const stateImages = {
