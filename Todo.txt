@@ -5,3 +5,8 @@ sheet not wonky
 2. Make people able to save what they put on sheets, as well as what other people have done. 
 so something like a cloud database. start with firebase I think and then work out from there
 3. DiceRolling + chat log
+
+4. get really good at responsiveness. set certain breakpoints + have naturally growing shit to add to movement in between those points
+
+4. Encounter Builder with a grid system that dynamically see's how much a card should take up and
+then adjusts how many grids it should span that way. Kinda cool

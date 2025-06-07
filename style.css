@@ -1,360 +1,404 @@
-/* Basic Reset */
+/* NOTES:
+/* Width @ 100 percent = 800~px */
+
+/*apply to everything----------------------------------------------------*/
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body {
-  font-family: sans-serif;
-  background-color: #f5f5f5;
-  padding: 0.5rem;
-  padding-top: 2rem;
-}
-
-.sheet {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  row-gap: 5px;
-  column-gap: 5px;
-  margin: 0 auto;
-  background-color: white;
-  max-width: 1200px;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-#character-info-box{
-  grid-area: 1 / 1 / span 1 / span 2;
-  display: grid;
-  grid-template-columns: 30% 60% 10%;
-  margin-bottom: 1rem;
-}
-
-#character-info-box-left{
-  background-color: hsl(0, 0%, 25%);
-  max-width: auto;
+/*Header----------------------------------------------------*/
+header{
+  background-color: rebeccapurple;
+  height: 100px;
+  position: sticky;
   color: white;
+  align-content: center;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+/*Body----------------------------------------------------*/
+body{
+  font-family: "Raleway", sans-serif;
+  background-color: black;
+}
+
+.image-input{
+  position: absolute;
+  background-color: transparent;
+  width: 45px;
+  height: 40px;
+  padding-bottom: 0px;
+  padding-top: 10px;
+  font-size: 2.2rem;
+  font-weight: 600;
+  text-align: center;
+  border: none;
+  border-radius: 5px;
+}
+input{
+  font-family: "Coming Soon";
+}
+
+/*Character Sheet----------------------------------------------------*/
+#character-sheet{
+  background-color: antiquewhite;
+  margin: 20px;
+  max-width: 1400px;
+}
+
+/*Sheet Header----------------------------------------------------*/
+#sheet-header{
+  background-color: #c7c8ca;
   display: flex;
-  align-items: center;
+}
+
+/*Sheet Type----------------------------------------------------*/
+#sheet-header__sheet-type{
+  background-color: #3e3e3f;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
-  padding: 5px;
 }
 
-#character-info-box-left-h1{
-  font-size: 2.5rem;
+#sheet-type__title{
+  font-weight: 900;
+  font-size: 2.3rem;
+  color: white;
+}
+#sheet-type__desc{
+  color: white;
 }
 
-#character-info-box-middle{
-  background-color: hsl(0, 0%, 75%);
-  max-width: auto;
+
+/*Background Information----------------------------------------------------*/
+#sheet-header__character-background-details{
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  margin-left: 15px;
+  row-gap: 5px;
 }
 
-#character-info-box-right{
-  background-color: hsl(0, 0%, 75%);
-  max-width: auto;
+.character-background-details__container-horizontal-splitter{
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 10px;
+  row-gap: 5px;
+  height: 50%;
+  width: 100%;
 }
 
-.character-info-input-box{
-  display: grid;
-  grid-template-columns: auto auto;
-  margin: 5px;
+.character-background-details__container input{
+  display: inline-block;
+  min-width: 0;
+  width: 100%;
+  height: 100%;
+  border: 1px solid #6c6d70;
+  border-radius: 7px;
+  font-size: 1.25rem;
+  font-weight: 600;
+  padding-top: 10px;
+  padding-left: 5px;
+}
+.character-background-details__container label{
+  position: absolute;
+  transform: translate(5px, 2px);
+  color: #6c6d70;
+  font-weight: 900;
+  font-size: 0.8rem;
+}
+
+#character-background-details__name{flex: 7;}
+#character-background-details__pronouns{flex: 3;}
+
+#character-background-details__heritage{flex: 5;}
+#character-background-details__class-subclass{flex: 5;}
+
+
+/*Level-------------------------------------------------------------*/
+#sheet-header__level{
+  display: inline-block;
+  padding: 15px;
+  margin-left: auto;
+}
+
+#sheet-header__level img{
+  display: block;
+}
+
+#level__input{
+  transform: translate(53%, -171%);
+}
+
+/*Secondary Sheet Header-------------------------------------------------------------*/
+#secondary-sheet-header{
+  display: flex;
+  flex-wrap: wrap;
+  padding: 15px;
+}
+
+/*Evasion and Armor -------------------------------------------------------------*/
+#secondary-sheet-header__evasion-armor{
+  display: flex;
+  border-right: 2px solid #6c6d70;
+}
+
+#evasion-armour-box__evasion{
+  transform: translate(-413%, 70%);
+}
+#evasion-armour-box__armor{
+  transform: translate(-153%, 70%);
+}
+
+/*Armor Slots -------------------------------------------------------------*/
+#armor-slot-grid{
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 120px;
+  max-height: 100px;
+  margin-left: 15px;
+  margin-right:15px;
+}
+
+#armor-slot-grid .armor-slot-box{
+  flex: 1 1 25%;
+  aspect-ratio: 1 / 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.armor-slot-box img{
+  cursor: pointer;
+}
+
+/*Traits -------------------------------------------------------------*/
+#secondary-sheet-header__traits{
+  display: flex;
+  margin-left: 15px;
   gap: 5px;
 }
 
-:root{
-  --md-filled-text-field-container-color: white;
-  --md-filled-text-field-input-text-size: 1.5rem;
-  --md-filled-text-field-focus-label-text-color: black;
-  --md-filled-text-field-focus-supporting-text-color: black;
-}
-
-:root{
-  --md-outlined-text-field-focus-outline-color: black;
-  --md-outlined-text-field-focus-label-text-color: black;
-  --md-outlined-text-field-input-text-size: 1.5rem;
-}
-
-#level{
-  margin: 5px;
+.trait-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   text-align: center;
 }
 
-#level input{
-  max-width: 100%;
-  min-height: 100px;
-  max-height: 100%;
-  font-size: 3rem;
-  font-weight: bold;
+.trait-container p{
+  position: relative;
+  transform: translate(-5%, 0);
+  font-size: .85rem;
+  font-weight: 400;
+  color: #3e3e3f;
+}
+
+.trait__image-input{
+  position: absolute;
+  background-color: transparent;
+  width: 45px;
+  height: 40px;
+  padding-bottom: 0px;
+  padding-top: 10px;
+  font-size: 2.2rem;
+  font-weight: 600;
   text-align: center;
-}
-
-#level label{
-  font-size: 1rem;
-  text-align: center;
-  background-color: hsl(0, 0%, 25%);
-  color: white;
-  display: block;
-  min-width: 75px;
-  padding: 2px;
-}
-
-/*------------Evasion & Armor & Traits------------*/
-
-#evasion-armor-traits-box{
-  grid-area: 2 / 1 / span 1 / span 2;
-  display: grid;
-  grid-template-columns: 30% 70%;
-  margin-bottom: 1rem;
-}
-
-/*------------Evasion & Armor------------*/
-
-#evasion-armor{
-  display: grid;
-  grid-template-columns: 1fr 1fr 80px;
-}
-
-/*------------Evasion------------*/
-#evasion{
-  text-align: center;
-}
-
-#evasion input{
-  height: 100px;
-  width: 100px;
-  font-size: 3rem;
-  font-weight: bold;
-  text-align: center;
-}
-
-#evasion label{
-  font-size: 1rem;
-  text-align: center;
-  background-color: hsl(0, 0%, 25%);
-  color: white;
-  display: block;
-  min-width: 75px;
-  max-width: 120px;
-  padding: 2px;
-}
-
-/*------------Armor------------*/
-#armor{
-  text-align: center;
-}
-
-#armor input{
-  height: 100px;
-  max-width: 100px;
-  font-size: 3rem;
-  font-weight: bold;
-  text-align: center;
-}
-
-#armor label{
-  font-size: 1rem;
-  text-align: center;
-  background-color: hsl(0, 0%, 25%);
-  color: white;
-  display: block;
-  min-width: 75px;
-  max-width: 120px;
-  padding: 2px;
-}
-
-/*------------ Armor Slots------------*/
-#armor-slots{
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  margin: 2px;
-  gap: 2px;
-}
-
-#armor-slots input{
-  width: 20px;
-  height: 20px;
-}
-
-/*------------Traits------------*/
-
-#traits{
-  grid-column-start: 2;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-}
-
-.trait{
-  display: grid;
-}
-
-.trait input{
-  height: 100px;
-  width: 100px;
-}
-
-#traits label{
-  font-size: 1rem;
-  text-align: center;
-  background-color: hsl(0, 0%, 25%);
-  color: white;
-  display: block;
-  min-width: 75px;
-  max-width: 120px;
-  padding: 2px;
-}
-
-#traits input{
-  font-size: 3rem;
-  font-weight: bold;
-  text-align: center;
-}
-
-/*------------Damage & Health------------*/
-#damage-health-box{
-  display: grid;
-  grid-template-rows: 60px 1fr 1fr;
-  border: 2px solid black;
-  border-radius: 10px;
-  padding: 5px;
-}
-
-#damage-health-title{
-  text-align: center;
-}
-
-#damage-health-title h2{
-  font-weight: 800;
-}
-
-#m-m-s-damage{
-  display: grid;
-  grid-template-columns: 2fr 1fr 2fr 1fr 2fr;
-  text-align: center;
-}
-
-#m-m-s-damage input {
-  width: 100%;
-  max-width: 100px;
-  text-align: center;
-  font-size: 2rem;
-}
-
-#m-m-s-damage div{
-  background-color: hsl(0, 0%, 25%);
-  color: white;
-}
-
-/*------------HP & Stress------------*/
-#hp-stress{
-  display: grid;
-  grid-template-rows: 1fr 1fr;
-  padding: 5px;
-}
-
-#hp-stress input{
-  width: 20px;
-  height: 20px;
-}
-
-/*------------Hope------------*/
-#hope-box{
-  grid-column: 1;
-  border: 2px solid black;
-  border-radius: 10px;
-  padding: 5px;
-}
-
-#hope-title{
-  text-align: center;
-}
-
-#hope-title h2{
-  font-weight: 800;
-}
-
-#hope-checkbox-box{
-  text-align: center;
-  margin: 3px;
-}
-
-#hope-checkbox-box input{
-  margin: 3px;
-  width: 20px;
-  height: 20px;
-}
-
-.full-width-field{
-  display: block;
-  width: 100%;
-}
-
-/*------------Experience------------*/
-#experience-box{
-  grid-column: 1;
-  border: 2px solid black;
-  border-radius: 10px;
-  padding: 5px;
-}
-
-#experience-title{
-  text-align: center;
-}
-
-#experience-title h2{
-  font-weight: 800;
-}
-
-/*------------Active Weapons------------*/
-#active-weapons-box{
-  grid-column: 2;
-  grid-row: 3;
-  border: 2px solid black;
-  border-radius: 10px;
-  padding: 5px;
-}
-
-#active-weapons-title{
-  text-align: center;
-}
-
-#active-weapons-title h2{
-  font-weight: 800;
-}
-
-#active-weapons-title input{
-  width: 20px;
-  height: 20px;
-}
-
-#active-weapons-h2 input{
-  margin: 5px;
-}
-
-#weapon-first-line{
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-}
-
-/*------------Active Armor------------*/
-#active-armor-box{
-  grid-column: 2;
-  grid-row: 4;
-  border: 2px solid black;
-  border-radius: 10px;
-  padding: 5px;
-}
-
-#active-armor-title{
-  text-align: center;
-}
-
-#active-armor-title h2{
-  font-weight: 800;
-}
-
-/*------------Testing------------*/
-#inputTest{
   border: none;
-  border-bottom: 2px solid black;
+  border-radius: 5px;
 }
+.trait__image-input{
+  transform: translate(64%, -67%);
+}
+.trait-selection-btn{
+  position: absolute;
+  transform: translate(348%, -226%);
+  cursor: pointer;
+}
+
+.trait__separation{
+  position: absolute;
+  width: 1px;
+  height: 75px;
+  border-right: 1.75px solid #6c6d70;
+  transform: translate(112px, 20px);
+}
+
+/*Character Sheet Body -------------------------------------------------------------*/
+#character-sheet-body{
+  display: flex;
+  width: 100%;
+  margin-top: 20px; /* do not adjust??? */
+  gap: 15px;
+  padding-bottom: 15px;
+}
+
+@media (max-width: 1146px) {
+  #character-sheet-body {
+    flex-direction: column;
+    gap: 2px;
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+}
+
+.character-sheet-body__section{
+  display: flex;
+  min-width: 0;
+  flex: 1;
+  gap: 2px;
+  flex-direction: column;
+}
+
+.character-sheet-body__section .character-sheet-body__container{
+  min-width: 530px;
+  max-width: 100%;
+  background-color: white;
+  border: 2px solid #6c6d70;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 5px;
+  padding: 10px;
+}
+
+#character-sheet-body__left .character-sheet-body__container{
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-left: none;
+}
+#character-sheet-body__right .character-sheet-body__container{
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-right: none;
+}
+@media (max-width: 1146px) {
+  #character-sheet-body__left .character-sheet-body__container,
+  #character-sheet-body__right .character-sheet-body__container{
+    border-radius: 10px;
+    border: 2px solid #6c6d70;
+  }
+}
+
+.character-sheet-body__container-title{
+  position: absolute;
+  display: flex;
+  text-align: center;
+  transform: translate(0px, -30px);
+}
+.character-sheet-body__container-title-top{
+  position: absolute;
+  display: flex;
+  text-align: center;
+  transform: translate(0px, -28.5px);
+}
+
+.character-sheet-body__container-desc{
+  margin-top: 10px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #3e3e3f;
+}
+
+/*Damage and Health -------------------------------------------------------------*/
+
+.damage-thresholds__p{
+  position: absolute;
+  font-size: .75rem;
+  font-weight: 600;
+  color: #3e3e3f;
+}
+#damage-thresholds__p1{
+  transform: translate(40px, -6px);
+}
+#damage-thresholds__p2{
+  transform: translate(220px, -6px);
+}
+#damage-thresholds__p3{
+  transform: translate(400px, -6px);
+}
+
+.damage-thresholds__input{
+  position: absolute;
+  background-color: transparent;
+  width: 50px;
+  height: 35px;
+  padding-bottom: 1px;
+  padding-top: 10px;
+  font-size: 2rem;
+  font-weight: 600;
+  text-align: center;
+  justify-items: center;
+  border: none;
+  border-radius: 5px;
+}
+#damage-thresholds__input1{
+  transform: translate(-365px, 9px);
+}
+#damage-thresholds__input1{
+  transform: translate(-185px, 9px);
+}
+
+#hp__container{
+  display: flex;
+  width: 500px;
+  margin-top: 10px;
+  align-items: center;
+  justify-content: space-between;
+}
+#hp__container p{
+  font-weight: 900;
+  color: #6c6d70;
+  font-size: 1.4rem;
+}
+#hp__container img{
+  height: 18px;
+  cursor: pointer;
+}
+
+#stress__container{
+  display: flex;
+  width: 500px;
+  margin-top: 10px;
+  align-items: center;
+  justify-content: space-between;
+}
+#stress__container p{
+  font-weight: 900;
+  color: #6c6d70;
+  font-size: 1.4rem;
+  margin-right: 5px;
+}
+#stress__container img{
+  height: 18px;
+  cursor: pointer;
+}
+
+#damage-health__container{
+  padding-bottom: 20px;
+}
+
+/*Hope -------------------------------------------------------------*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
