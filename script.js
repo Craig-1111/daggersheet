@@ -129,7 +129,7 @@ window.addEventListener('DOMContentLoaded', () => {
   savedImgBtnToggle('.armor-slot', './images/Armor-Filled-Test-8px.png', './images/Armor-Slot-no-bkg.png');
 
   // Trait buttons
-  savedImgBtnToggle('.trait-selection-btn', './images/Trait-Filled-Button-Test-10px-2.png', 'images/Trait-Empty-Button.png');
+  savedImgBtnToggle('.trait-selection-btn', './images/Trait-Filled-Button-Test-10px-2.png', './images/Trait-Empty-Button.png');
 
   // Hope buttons
   savedImgBtnToggle('.hope-slot', './images/Hope-Slot-Full-Test-12px-2.png', './images/Hope-Slot-Empty.png');
@@ -137,6 +137,12 @@ window.addEventListener('DOMContentLoaded', () => {
   // Proficiency buttons
   savedImgBtnToggle('.proficiency_btn', './images/Trait-Filled-Button-Test-10px-2.png', './images/Trait-Empty-Button.png');
 
+  // Hover tooltop
   setupMouseTooltip('hp-stress-btn', 'Left click to remove');
 
+  // Hand Left Toggle
+  savedImgBtnToggle('.weapon_hand-left', './images/Active-Weapons-Title-Left-Hand-No-Bkg-15px.png', './images/Active-Weapons-Title-Left-Hand-No-Bkg.png');
+
+  // Hand Right Toggle
+  savedImgBtnToggle('.weapon_hand-right', './images/Active-Weapons-Title-Right-Hand-No-Bkg-15px.png', './images/Active-Weapons-Title-Right-Hand-No-Bkg.png');
 });

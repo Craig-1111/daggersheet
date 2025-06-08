@@ -272,7 +272,7 @@ input {
   display: flex;
   min-width: 0;
   flex: 1;
-  gap: 2px;
+  gap: 3px;
   flex-direction: column;
 }
 
@@ -504,6 +504,7 @@ input {
 
 
 /*Active Weapons -------------------------------------------------------------*/
+/* 133x139 */
 
 #active-weapons__container{
 padding-bottom: 20px;
@@ -511,6 +512,17 @@ padding-bottom: 20px;
 
 #primary-weapon__container{
   margin-top: 40px; /* Cause of the weird shaped title */
+}
+
+.weapon_hand{
+  position: absolute;
+  cursor: pointer;
+}
+#active-weapon_hand1{
+  transform: translate(389px, -5.95px);
+}
+#active-weapon_hand2{
+  transform: translate(427px, -6.25px);
 }
 
 .proficiency_btn{
