@@ -1,4 +1,4 @@
-//Saving to LocalStorage
+//Saving Text inputs to LocalStorage
 document.querySelectorAll('input').forEach(input => {
   const key = input.id;
   input.value = localStorage.getItem(key) || '';
@@ -8,82 +8,93 @@ document.querySelectorAll('input').forEach(input => {
 });
 
 
-// Button For Traits-----------------------------------------------------
-document.querySelectorAll('.trait-selection-btn').forEach(slot => {
-  slot.addEventListener('click', () => {
-    const selected = slot.dataset.selected === 'true';
+function savedImgBtnToggle(btnClass, filledImage, emptyImage) {
+  document.querySelectorAll(btnClass).forEach(slot => {
+    const key = slot.id || slot.dataset.id;
 
-    slot.dataset.selected = !selected;
-    slot.src = selected
-      ? 'images/Trait-Empty-Button.png'
-      : 'images/Trait-Filled-Button-Test-10px-2.png';
-  });
-});
+    // Load saved state from localStorage
+    const savedState = localStorage.getItem(key);
+    const isSelected = savedState === 'true';
 
-// Button For Armor-----------------------------------------------------
-document.querySelectorAll('.armor-slot').forEach(slot => {
-  slot.addEventListener('click', () => {
-    const selected = slot.dataset.selected === 'true';
+    // Set visual state on page load
+    if (savedState !== null) {
+      slot.dataset.selected = savedState;
+      slot.src = isSelected ? filledImage : emptyImage;
+    }
 
-    slot.dataset.selected = !selected;
-    slot.src = selected
-      ? 'images/Armor-Slot-no-bkg.png'
-      : 'images/Armor-Filled-Test-8px.png';
-  });
-});
-
-// Button For Hope-----------------------------------------------------
-document.querySelectorAll('.hope-slot').forEach(slot => {
-  slot.addEventListener('click', () => {
-    const selected = slot.dataset.selected === 'true';
-
-    slot.dataset.selected = !selected;
-    slot.src = selected
-      ? 'images/Hope-Slot-Empty.png'
-      : 'images/Hope-Slot-Full-Test-12px-2.png';
-  });
-});
-
-
-
-// HP / Stress Button-----------------------------------------------------
-function hpStressSlots(){
-  const stateImages = {
-    blank: 'images/Stress-Btn-Blank.png',
-    empty: 'images/Stress-Btn-Empty.png',
-    filled: 'images/Stress-Btn-Filled-Test-10px.png'
-  };
-
-  document.querySelectorAll('.hp-stress-btn').forEach(slot => {
-    slot.addEventListener('contextmenu', e => e.preventDefault());
-
+     // Save updated state on click
     slot.addEventListener('click', () => {
-      let state = slot.dataset.state;
+      const selected = slot.dataset.selected === 'true';
+      const nextState = !selected;
 
-      if(state==='blank'){
-        slot.src = stateImages.filled;
-        slot.dataset.state = 'filled';
-      }
-      else if(state==='filled'){
-        slot.src = stateImages.blank;
-        slot.dataset.state = 'blank';
-      }
-      else{
-        slot.src = stateImages.blank;
-        slot.dataset.state = 'blank';     
-      }
-    });
+      slot.dataset.selected = nextState;
+      slot.src = nextState ? filledImage : emptyImage;
 
-    slot.addEventListener('contextmenu', e => {
-      let state = slot.dataset.state;
-      
-      if(state==='blank' || state==='filled'){
-        slot.src = stateImages.empty;
-        slot.dataset.state = 'empty';    
-      }
+      localStorage.setItem(key, nextState);
     });
   });
 }
 
-// call it once DOM is ready
-window.addEventListener('DOMContentLoaded', hpStressSlots);
+// HP / Stress Button-----------------------------------------------------
+function hpStressSlots() {
+  const stateImages = {
+    blank: './images/Stress-Btn-Blank.png',
+    empty: './images/Stress-Btn-Empty.png',
+    filled: './images/Stress-Btn-Filled-Test-10px.png'
+  };
+
+  // Loop through every stress button on the page
+  document.querySelectorAll('.hp-stress-btn').forEach(slot => {
+    const key = slot.id || slot.dataset.id;
+
+    // Load saved state if it exists
+    const savedState = localStorage.getItem(key);
+    if(savedState){
+      setState(slot, savedState); // Apply saved visual state
+    }
+    // Left click: toggle between blank <-> filled
+    slot.addEventListener('click', () => {
+      const current = slot.dataset.state;
+      const next = current === 'blank' ? 'filled' : 'blank';
+      setState(slot, next);
+      localStorage.setItem(key, next);
+    });
+
+    // Right click: switch to 'empty'
+    slot.addEventListener('contextmenu', (e) => {
+      e.preventDefault();
+      const current = slot.dataset.state;
+
+      // Only allow switching to empty from blank or filled
+      if (current === 'blank' || current === 'filled') {
+        setState(slot, 'empty');
+        localStorage.setItem(key, 'empty');
+      }
+    });
+  });
+
+  // Helper function to update button state and image
+  function setState(slot, state) {
+    slot.dataset.state = state;
+    slot.src = stateImages[state];
+  }
+}
+
+
+
+window.addEventListener('DOMContentLoaded', () => {
+  // Run all setup functions in one go
+  hpStressSlots();
+
+  // Armor buttons
+  savedImgBtnToggle('.armor-slot', './images/Armor-Filled-Test-8px.png', './images/Armor-Slot-no-bkg.png');
+
+  // Trait buttons
+  savedImgBtnToggle('.trait-selection-btn', './images/Trait-Filled-Button-Test-10px-2.png', 'images/Trait-Empty-Button.png');
+
+  // Hope buttons
+  savedImgBtnToggle('.hope-slot', './images/Hope-Slot-Full-Test-12px-2.png', './images/Hope-Slot-Empty.png');
+
+  // Proficiency buttons
+  savedImgBtnToggle('.proficiency-slot', './images/Prof-Filled.png', './images/Prof-Empty.png');
+});

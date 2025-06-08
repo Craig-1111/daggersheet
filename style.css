@@ -39,7 +39,7 @@ body {
   max-width: 1200px;
 }
 
-/* Header Styles */
+/* Header Styles 
 header {
   background-color: rebeccapurple;
   height: 100px;
@@ -49,6 +49,7 @@ header {
   font-size: 2rem;
   font-weight: 800;
 }
+*/
 
 /* Sheet Header */
 #sheet-header {
@@ -65,7 +66,6 @@ header {
 }
 
 #sheet-type__container {
-  background-color: aquamarine;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -89,7 +89,6 @@ header {
 }
 
 #sheet-header__character-background-details {
-  background-color: brown;
   display: flex;
   flex-wrap: wrap;
   margin: 15px 0;
@@ -100,7 +99,6 @@ header {
 }
 
 .character-background-details__container-horizontal-splitter {
-  background-color: blue;
   display: flex;
   width: 100%;
   flex-wrap: wrap;
@@ -157,7 +155,6 @@ header {
 
 /* Evasion and Armor */
 #secondary-sheet-header__evasion-armor {
-  background-color: aqua;
   display: flex;
   align-items: center;
   border-right: 2px solid var(--border-color);
@@ -211,14 +208,13 @@ input {
 
 /*Traits -------------------------------------------------------------*/
 #secondary-sheet-header__traits{
-  background-color: blue;
   display: flex;
   margin-left: 15px;
   gap: 5px;
 }
 
 .trait-container{
-  background-color: pink;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -665,9 +661,12 @@ padding-bottom: 20px;
     margin-left: 0px;
   }
   #secondary-sheet-header__traits{
-    flex-wrap: wrap;
-    justify-content: center;
-
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    grid-template-rows: repeat(2, auto);
+  }
+  #finese-trait__separation{
+    border: none;
   }
 
 }
