@@ -511,6 +511,7 @@ padding-bottom: 20px;
 .weapon__container{
   display: flex;
   flex-direction: column;
+  background-color: aqua;
 }
 
 .weapon__title-box{
@@ -526,6 +527,7 @@ padding-bottom: 20px;
 
 .weapon__desc-box{
   display: flex;
+  background-color: aquamarine;
 }
 
 .weapon__name{
@@ -564,9 +566,26 @@ padding-bottom: 20px;
   display: flex;
   flex-direction: column;
   text-align: start;
+  background-color: blueviolet;
 }
 
 /*Active Armor -------------------------------------------------------------*/
+
+#armor__name{
+  flex: 2; /*50% */
+}
+
+#armor__base-thresholds{
+  flex: 1; /*25% */
+}
+
+
+#armor__base-score{
+  flex: 1; /*25% */
+}
+
+
+
 
 /*Gold/Inventory -------------------------------------------------------------*/
 #inventory-gold__container{
