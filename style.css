@@ -1,192 +1,224 @@
-/* NOTES:
-/* Width @ 100 percent = 800~px */
+:root {
+  --primary-color: #3e3e3f;
+  --secondary-color: #c7c8ca;
+  --text-color: white;
+  --border-color: #6c6d70;
+  --input-height: 40px;
+  --input-width: 45px;
+  --input-font-size: 2.2rem;
+  --input-padding-top: 10px;
+  --input-padding-bottom: 0;
+  --input-border-radius: 5px;
+  --input-font-weight: 600;
+  --container-padding: 20px;
+}
 
-/*apply to everything----------------------------------------------------*/
+/* Reset and Base Styles */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/*Header----------------------------------------------------*/
-header{
+body {
+  font-family: "Raleway", sans-serif;
+}
+
+/* Layout Containers */
+#character-sheet-container {
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: var(--container-padding);
+}
+
+#character-sheet {
+  background-color: antiquewhite;
+  max-width: 1200px;
+}
+
+/* Header Styles */
+header {
   background-color: rebeccapurple;
   height: 100px;
   position: sticky;
   color: white;
-  align-content: center;
   text-align: center;
   font-size: 2rem;
   font-weight: 800;
 }
 
-/*Body----------------------------------------------------*/
-body{
-  font-family: "Raleway", sans-serif;
-  background-color: black;
-}
-
-.image-input{
-  position: absolute;
-  background-color: transparent;
-  width: 45px;
-  height: 40px;
-  padding-bottom: 0px;
-  padding-top: 10px;
-  font-size: 2.2rem;
-  font-weight: 600;
-  text-align: center;
-  border: none;
-  border-radius: 5px;
-}
-input{
-  font-family: "Coming Soon";
-}
-
-/*Character Sheet----------------------------------------------------*/
-#character-sheet{
-  background-color: antiquewhite;
-  margin: 20px;
-  max-width: 1400px;
-  align-self: center;
-}
-
-/*Sheet Header----------------------------------------------------*/
-#sheet-header{
-  background-color: #c7c8ca;
+/* Sheet Header */
+#sheet-header {
+  background-color: var(--secondary-color);
   display: flex;
 }
 
-/*Sheet Type----------------------------------------------------*/
-#sheet-header__sheet-type{
-  background-color: #3e3e3f;
+#sheet-header__sheet-type {
+  background-color: var(--primary-color);
+  display: flex;
+  justify-content: center;
+  align-content: center;
   padding: 15px;
+}
+
+#sheet-type__container {
+  background-color: aquamarine;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-content: start;
 }
 
-#sheet-type__title{
+#sheet-type__title {
   font-weight: 900;
   font-size: 2.3rem;
-  color: white;
-}
-#sheet-type__desc{
-  color: white;
+  color: var(--text-color);
 }
 
+#sheet-type__desc {
+  color: var(--text-color);
+}
 
-/*Background Information----------------------------------------------------*/
-#sheet-header__character-background-details{
+/* Character Background Details */
+#sheet-header__right{
+  display: flex;
+  align-items: center;
+}
+
+#sheet-header__character-background-details {
+  background-color: brown;
   display: flex;
   flex-wrap: wrap;
-  width: 100%;
-  margin-top: 15px;
-  margin-bottom: 15px;
+  margin: 15px 0;
   margin-left: 15px;
   row-gap: 5px;
+  width: 100%;
+  min-width: 0;
 }
 
-.character-background-details__container-horizontal-splitter{
+.character-background-details__container-horizontal-splitter {
+  background-color: blue;
   display: flex;
+  width: 100%;
   flex-wrap: wrap;
   column-gap: 10px;
   row-gap: 5px;
-  height: 50%;
-  width: 100%;
+  min-width: 0;
 }
 
-.character-background-details__container input{
-  display: inline-block;
-  min-width: 0;
-  width: 100%;
+.character-background-details__container input {
   height: 100%;
-  border: 1px solid #6c6d70;
+  border: 1px solid var(--border-color);
   border-radius: 7px;
   font-size: 1.25rem;
   font-weight: 600;
-  padding-top: 10px;
-  padding-left: 5px;
+  padding: 10px 5px;
+  width: 100%;
+  min-width: 0;
 }
-.character-background-details__container label{
+
+.character-background-details__container label {
   position: absolute;
   transform: translate(5px, 2px);
-  color: #6c6d70;
+  color: var(--border-color);
   font-weight: 900;
   font-size: 0.8rem;
 }
 
-#character-background-details__name{flex: 7;}
-#character-background-details__pronouns{flex: 3;}
+#character-background-details__name { flex: 7; }
+#character-background-details__pronouns { flex: 3; }
+#character-background-details__heritage { flex: 5; }
+#character-background-details__class-subclass { flex: 5; }
 
-#character-background-details__heritage{flex: 5;}
-#character-background-details__class-subclass{flex: 5;}
-
-
-/*Level-------------------------------------------------------------*/
+/* Level */
 #sheet-header__level{
-  display: inline-block;
-  padding: 15px;
-  margin-left: auto;
+  padding: 10px;
 }
 
-#sheet-header__level img{
+#sheet-header__level img {
   display: block;
 }
 
-#level__input{
+#level__input {
   transform: translate(53%, -171%);
 }
 
-/*Secondary Sheet Header-------------------------------------------------------------*/
-#secondary-sheet-header{
+/* Secondary Sheet Header */
+#secondary-sheet-header {
   display: flex;
-  flex-wrap: wrap;
+  justify-content: center;
   padding: 15px;
+  padding-right: 20px;
+  padding-left: 20px;
 }
 
-/*Evasion and Armor -------------------------------------------------------------*/
-#secondary-sheet-header__evasion-armor{
+/* Evasion and Armor */
+#secondary-sheet-header__evasion-armor {
+  background-color: aqua;
   display: flex;
-  border-right: 2px solid #6c6d70;
+  align-items: center;
+  border-right: 2px solid var(--border-color);
 }
 
-#evasion-armour-box__evasion{
+
+#evasion-armour-box__evasion {
   transform: translate(-413%, 70%);
 }
-#evasion-armour-box__armor{
+
+#evasion-armour-box__armor {
   transform: translate(-153%, 70%);
 }
 
-/*Armor Slots -------------------------------------------------------------*/
-#armor-slot-grid{
-  display: flex;
-  flex-wrap: wrap;
-  max-width: 120px;
-  max-height: 100px;
-  margin-left: 15px;
-  margin-right:15px;
+/* Armor Slots */
+#armor-slot-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns */
+  grid-template-rows: repeat(4, auto);   /* 4 rows */
+  margin: 0 20px;
+  gap: 2px;
 }
 
-#armor-slot-grid .armor-slot-box{
-  flex: 1 1 25%;
-  aspect-ratio: 1 / 1;
+.armor-slot-box {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.armor-slot-box img{
+
+.armor-slot-box img {
   cursor: pointer;
+}
+
+/* Input Styles */
+.image-input {
+  position: absolute;
+  background-color: transparent;
+  width: var(--input-width);
+  height: var(--input-height);
+  padding: var(--input-padding-top) var(--input-padding-bottom);
+  font-size: var(--input-font-size);
+  font-weight: var(--input-font-weight);
+  text-align: center;
+  border: none;
+  border-radius: var(--input-border-radius);
+}
+
+input {
+  font-family: "Coming Soon";
 }
 
 /*Traits -------------------------------------------------------------*/
 #secondary-sheet-header__traits{
+  background-color: blue;
   display: flex;
   margin-left: 15px;
   gap: 5px;
 }
 
 .trait-container{
+  background-color: pink;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -240,15 +272,6 @@ input{
   padding-bottom: 15px;
 }
 
-@media (max-width: 1146px) {
-  #character-sheet-body {
-    flex-direction: column;
-    gap: 2px;
-    padding-right: 15px;
-    padding-left: 15px;
-  }
-}
-
 .character-sheet-body__section{
   display: flex;
   min-width: 0;
@@ -279,13 +302,6 @@ input{
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
   border-right: none;
-}
-@media (max-width: 1146px) {
-  #character-sheet-body__left .character-sheet-body__container,
-  #character-sheet-body__right .character-sheet-body__container{
-    border-radius: 10px;
-    border: 2px solid #6c6d70;
-  }
 }
 
 .character-sheet-body__container-title{
@@ -599,9 +615,60 @@ padding-bottom: 20px;
 }
 
 
+/*MEDIA Changes -------------------------------------------------------------*/
 
+@media (max-width: 1200px) {
+  #character-sheet-body {
+    flex-direction: column;
+    gap: 2px;
+    padding-right: 15px;
+    padding-left: 15px;
+  }
 
+  #character-sheet-body__left .character-sheet-body__container,
+  #character-sheet-body__right .character-sheet-body__container{
+    border-radius: 10px;
+    border: 2px solid #6c6d70;
+  }
 
+  #secondary-sheet-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px;
+  gap: 15px;
+  padding-right: 20px;
+  padding-left: 20px;
+  }
 
+  #secondary-sheet-header__evasion-armor {
+  border-right: none;
+  }
+  #sheet-header {
+  background-color: var(--secondary-color);
+  display: flex;
+  flex-direction: column;
+  }
+}
 
+@media (max-width: 800px) {
+  .character-background-details__container-horizontal-splitter {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  column-gap: 10px;
+  row-gap: 5px;
+  width: 100%;
+  }
+
+  #secondary-sheet-header__traits{
+    margin-left: 0px;
+  }
+  #secondary-sheet-header__traits{
+    flex-wrap: wrap;
+    justify-content: center;
+
+  }
+
+}
 

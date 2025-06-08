@@ -1,3 +1,13 @@
+//Saving to LocalStorage
+document.querySelectorAll('input').forEach(input => {
+  const key = input.id;
+  input.value = localStorage.getItem(key) || '';
+  input.addEventListener('input', () => {
+    localStorage.setItem(key, input.value);
+  });
+});
+
+
 // Button For Traits-----------------------------------------------------
 document.querySelectorAll('.trait-selection-btn').forEach(slot => {
   slot.addEventListener('click', () => {

@@ -8,6 +8,7 @@ so something like a cloud database. start with firebase I think and then work ou
 - Fix image reference files
 
 4. get really good at responsiveness. set certain breakpoints + have naturally growing shit to add to movement in between those points
+Make a class for flex up and flex down
 
 4. Encounter Builder with a grid system that dynamically see's how much a card should take up and
 then adjusts how many grids it should span that way. Kinda cool
