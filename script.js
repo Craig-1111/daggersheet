@@ -80,6 +80,45 @@ function hpStressSlots() {
   }
 }
 
+function setupMouseTooltip(className, tooltipText) {
+  // Create tooltip element
+  const tooltip = document.createElement('div');
+  tooltip.style.position = 'fixed';
+  tooltip.style.pointerEvents = 'none';
+  tooltip.style.background = '#333';
+  tooltip.style.color = 'white';
+  tooltip.style.padding = '5px 8px';
+  tooltip.style.borderRadius = '4px';
+  tooltip.style.fontSize = '0.8rem';
+  tooltip.style.opacity = '0';
+  tooltip.style.transition = 'opacity 0.2s ease';
+  tooltip.style.zIndex = '9999';
+  tooltip.style.whiteSpace = 'nowrap';
+  tooltip.textContent = tooltipText;
+  document.body.appendChild(tooltip);
+
+  // Move tooltip with mouse when visible
+  document.addEventListener('mousemove', (e) => {
+    if (tooltip.style.opacity === '1') {
+      const offsetX = 15;
+      const offsetY = 15;
+      tooltip.style.left = e.clientX + offsetX + 'px';
+      tooltip.style.top = e.clientY + offsetY + 'px';
+    }
+  });
+
+  // Show/hide tooltip on hover of elements with className
+  document.querySelectorAll(`.${className}`).forEach(elem => {
+    elem.addEventListener('mouseenter', () => {
+      tooltip.style.opacity = '1';
+    });
+    elem.addEventListener('mouseleave', () => {
+      tooltip.style.opacity = '0';
+    });
+  });
+}
+
+
 
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -96,5 +135,8 @@ window.addEventListener('DOMContentLoaded', () => {
   savedImgBtnToggle('.hope-slot', './images/Hope-Slot-Full-Test-12px-2.png', './images/Hope-Slot-Empty.png');
 
   // Proficiency buttons
-  savedImgBtnToggle('.proficiency-slot', './images/Prof-Filled.png', './images/Prof-Empty.png');
+  savedImgBtnToggle('.proficiency_btn', './images/Trait-Filled-Button-Test-10px-2.png', './images/Trait-Empty-Button.png');
+
+  setupMouseTooltip('hp-stress-btn', 'Left click to remove');
+
 });

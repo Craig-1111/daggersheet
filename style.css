@@ -375,6 +375,11 @@ input {
   cursor: pointer;
 }
 
+#hp__container img{
+  height: 18px;
+  cursor: pointer;
+}
+
 #stress__container{
   display: flex;
   width: 500px;
@@ -508,10 +513,32 @@ padding-bottom: 20px;
   margin-top: 40px; /* Cause of the weird shaped title */
 }
 
+.proficiency_btn{
+  position: absolute;
+  cursor: pointer;
+}
+#proficiency_btn1{
+  transform: translate(309.5px, 37px);
+}
+#proficiency_btn2{
+  transform: translate(286px, 37px);
+}
+
+#proficiency_btn3{
+  transform: translate(263px, 37px);
+}
+#proficiency_btn4{
+  transform: translate(240px, 37px);
+}
+#proficiency_btn5{
+  transform: translate(217px, 37px);
+}
+
+
+
 .weapon__container{
   display: flex;
   flex-direction: column;
-  background-color: aqua;
 }
 
 .weapon__title-box{
@@ -527,7 +554,6 @@ padding-bottom: 20px;
 
 .weapon__desc-box{
   display: flex;
-  background-color: aquamarine;
 }
 
 .weapon__name{
@@ -566,7 +592,6 @@ padding-bottom: 20px;
   display: flex;
   flex-direction: column;
   text-align: start;
-  background-color: blueviolet;
 }
 
 /*Active Armor -------------------------------------------------------------*/
