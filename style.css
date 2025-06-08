@@ -48,6 +48,7 @@ input{
   background-color: antiquewhite;
   margin: 20px;
   max-width: 1400px;
+  align-self: center;
 }
 
 /*Sheet Header----------------------------------------------------*/
@@ -555,8 +556,47 @@ padding-bottom: 20px;
 
 /*Active Armor -------------------------------------------------------------*/
 
+/*Gold/Inventory -------------------------------------------------------------*/
+#inventory-gold__container{
 
+}
 
+#gold__container{
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+}
+
+#gold__box{
+  display: flex;
+  gap: 5px;
+}
+
+#handful__box{
+  flex: 4;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  border-right: 2px dotted #a8a9ad;
+}
+
+#bags__box{
+  flex: 4;
+  display: flex;
+  flex-direction: column;
+  justify-items: flex-end;
+  border-right: 2px dotted #a8a9ad;
+}
+
+#chest__box{
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+}
+
+.gold-inv__label{
+  margin-left: 0px;
+}
 
 
 
