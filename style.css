@@ -734,17 +734,7 @@ padding-bottom: 20px;
 
 /*Chat Box Testing -------------------------------------------------------------*/
 
-body {
-  font-family: sans-serif;
-  background: #1e1e1e;
-  color: #fff;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
+
 
 .chat-container {
   width: 400px;
@@ -769,6 +759,7 @@ body {
   padding: 6px 10px;
   background: #3a3a3a;
   border-radius: 6px;
+  color: white;
 }
 
 #chat-form {

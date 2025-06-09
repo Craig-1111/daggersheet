@@ -8,13 +8,95 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Coming+Soon&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js"></script>
 </head>
 <!-- <header id="header">
   HEADER AND NAVIGATION BAR PLACEHOLDER 
 </header> -->
 <body>
+  <!-- CHAT BOX TESTING ---------------------------------------------------------------------------------------------------------------------------------------------->
+  <div class="chat-container">
+    <div id="chat-window" class="chat-window"></div>
+    <form id="chat-form">
+      <input type="text" id="chat-input" placeholder="Type your message..." autocomplete="off">
+      <button type="submit">Send</button>
+    </form>
+  </div>
+
+<!-- [Sword Slash]{1d8+2|adv:2d8+2|crit:1d8+2+4} -->
+
+
+
+
+  <!-- Clicky stuff testing ----------------------->
+
+  <style>
+  .clickable {
+    user-select: none;
+    cursor: pointer;
+    color: black;
+  }
+  </style>
+
+  <div id="editor" contenteditable="true" style="border:2px solid black; background-color: antiquewhite; border-radius: 5px; padding:10px; width:300px; min-height:100px;"></div>
+
+  <script>
+    const editor = document.getElementById('editor');
+
+    // On input, parse text and wrap hashtags
+    editor.addEventListener('input', () => {
+      const text = editor.innerText;
+
+      // Split text by spaces, wrap hashtags in spans
+      const html = text.split(/\s+/).map(word => {
+        if (word.startsWith('#')) {
+          return `<span class="clickable">${word}</span>`;
+        }
+        return word;
+      }).join(' ');
+
+      // Save cursor position
+      const selection = window.getSelection();
+      const range = selection.getRangeAt(0);
+      const cursorPos = range.endOffset;
+
+      editor.innerHTML = html;
+
+      // Restore cursor (simple way)
+      const textNode = editor.firstChild;
+      if (textNode && textNode.length >= cursorPos) {
+        const newRange = document.createRange();
+        newRange.setStart(textNode, cursorPos);
+        newRange.collapse(true);
+        selection.removeAllRanges();
+        selection.addRange(newRange);
+      }
+    });
+
+    // Prevent default mouse down on clickable so cursor doesn't move there
+    editor.addEventListener('mousedown', (e) => {
+      if (e.target.classList.contains('clickable')) {
+        e.preventDefault();
+      }
+    });
+
+    // Toggle color on click
+    editor.addEventListener('click', (e) => {
+      if (e.target.classList.contains('clickable')) {
+        const el = e.target;
+        if (el.style.color === 'red') {
+          el.style.color = 'black';
+        } else {
+          el.style.color = 'red';
+          el.style.border = '1px solid black'
+        }
+      }
+    });
+  </script>
+
+
+
+
+
   <!--Character Sheet Container----------------------------------------------->
   <div id="character-sheet-container">
     <!--Whole Character Sheet----------------------------------------------->
@@ -405,14 +487,9 @@
 
 
 
-  <!-- CHAT BOX TESTING ---------------------------------------------------------------------------------------------------------------------------------------------->
-  <div class="chat-container">
-    <div id="chat-window" class="chat-window"></div>
-    <form id="chat-form">
-      <input type="text" id="chat-input" placeholder="Type your message..." autocomplete="off">
-      <button type="submit">Send</button>
-    </form>
-  </div>
+
+
+
 
 <!-- Firebase SDK -->
 <script type="module">
@@ -422,24 +499,7 @@
   import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
   import { getFirestore, collection, addDoc, serverTimestamp, query, orderBy, onSnapshot } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
 
-  // Anonymis authorized users 
-  const auth = getAuth(app);
-
-  signInAnonymously(auth)
-    .then(() => {
-      console.log("Signed in anonymously");
-    })
-    .catch((error) => {
-      console.error("Anonymous sign-in error", error);
-    });
-
-  onAuthStateChanged(auth, (user) => {
-    if (user) {
-      console.log("User ID:", user.uid);
-    }
-  });
-
-  // ✅ Your Firebase config
+    // ✅ Your Firebase config
   const firebaseConfig = {
     apiKey: "AIzaSyDJnb-thMT8j5_mslX1_xPqar0EGV7mJNM",
     authDomain: "dh-helper.firebaseapp.com",
@@ -453,6 +513,23 @@
   // Init
   const app = initializeApp(firebaseConfig);
   const db = getFirestore(app);
+  const auth = getAuth(app);
+
+
+  // Anonymis authorized users 
+  signInAnonymously(auth)
+    .then(() => {
+      console.log("Signed in anonymously");
+    })
+    .catch((error) => {
+      console.error("Anonymous sign-in error", error);
+    });
+
+  onAuthStateChanged(auth, (user) => {
+    if (user) {
+      console.log("User ID:", user.uid);
+    }
+  });
 
   // Elements
   const chatWindow = document.getElementById("chat-window");
