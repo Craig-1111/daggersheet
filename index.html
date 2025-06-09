@@ -417,9 +417,12 @@
 <!-- Firebase SDK -->
 <script type="module">
 
-  // Anonymis authorized users 
+  // Import from CDN
   import { getAuth, signInAnonymously, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+  import { getFirestore, collection, addDoc, serverTimestamp, query, orderBy, onSnapshot } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
 
+  // Anonymis authorized users 
   const auth = getAuth(app);
 
   signInAnonymously(auth)
@@ -435,10 +438,6 @@
       console.log("User ID:", user.uid);
     }
   });
-
-  // Import from CDN
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
-  import { getFirestore, collection, addDoc, serverTimestamp, query, orderBy, onSnapshot } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
 
   // ✅ Your Firebase config
   const firebaseConfig = {
