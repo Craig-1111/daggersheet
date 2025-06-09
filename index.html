@@ -416,9 +416,14 @@
     </form>
   </div>
 
-  <script>
-    // 🔥 REPLACE THIS with your actual config from Firebase console
-    const firebaseConfig = {
+<!-- Firebase SDK -->
+<script type="module">
+  // Import from CDN
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+  import { getFirestore, collection, addDoc, serverTimestamp, query, orderBy, onSnapshot } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+
+  // ✅ Your Firebase config
+  const firebaseConfig = {
     apiKey: "AIzaSyDJnb-thMT8j5_mslX1_xPqar0EGV7mJNM",
     authDomain: "dh-helper.firebaseapp.com",
     projectId: "dh-helper",
@@ -426,44 +431,45 @@
     messagingSenderId: "716341287853",
     appId: "1:716341287853:web:e52a15f38dbf3040999f24",
     measurementId: "G-J9XM92VRCH"
-    };
+  };
 
-    // Initialize Firebase
-    firebase.initializeApp(firebaseConfig);
-    const db = firebase.firestore();
+  // Init
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
 
-    const chatWindow = document.getElementById("chat-window");
-    const chatForm = document.getElementById("chat-form");
-    const chatInput = document.getElementById("chat-input");
+  // Elements
+  const chatWindow = document.getElementById("chat-window");
+  const chatForm = document.getElementById("chat-form");
+  const chatInput = document.getElementById("chat-input");
 
-    // Save new messages
-    chatForm.addEventListener("submit", (e) => {
-      e.preventDefault();
-      const text = chatInput.value.trim();
-      if (text) {
-        db.collection("messages").add({
-          text,
-          timestamp: firebase.firestore.FieldValue.serverTimestamp()
-        });
-        chatInput.value = "";
-      }
-    });
-
-    // Realtime listener
-    db.collection("messages")
-      .orderBy("timestamp")
-      .onSnapshot(snapshot => {
-        chatWindow.innerHTML = "";
-        snapshot.forEach(doc => {
-          const msg = doc.data();
-          const div = document.createElement("div");
-          div.className = "chat-msg";
-          div.textContent = msg.text;
-          chatWindow.appendChild(div);
-        });
-        chatWindow.scrollTop = chatWindow.scrollHeight;
+  // Submit messages
+  chatForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const text = chatInput.value.trim();
+    if (text) {
+      await addDoc(collection(db, "messages"), {
+        text,
+        timestamp: serverTimestamp()
       });
-  </script>
+      chatInput.value = "";
+    }
+  });
+
+  // Real-time updates
+  const q = query(collection(db, "messages"), orderBy("timestamp"));
+  onSnapshot(q, (snapshot) => {
+    chatWindow.innerHTML = "";
+    snapshot.forEach(doc => {
+      const msg = doc.data();
+      const div = document.createElement("div");
+      div.className = "chat-msg";
+      div.textContent = msg.text;
+      chatWindow.appendChild(div);
+    });
+    chatWindow.scrollTop = chatWindow.scrollHeight;
+  });
+</script>
+
   <!-- CHAT BOX TESTING ---------------------------------------------------------------------------------------------------------------------------------------------->
 
 
