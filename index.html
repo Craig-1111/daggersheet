@@ -396,9 +396,7 @@
                 </div>
               </div>
             </div>
-
           </div>
-
         </div> <!-- End of Right-->
       </div>
     </div>
@@ -418,6 +416,26 @@
 
 <!-- Firebase SDK -->
 <script type="module">
+
+  // Anonymis authorized users 
+  import { getAuth, signInAnonymously, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+
+  const auth = getAuth(app);
+
+  signInAnonymously(auth)
+    .then(() => {
+      console.log("Signed in anonymously");
+    })
+    .catch((error) => {
+      console.error("Anonymous sign-in error", error);
+    });
+
+  onAuthStateChanged(auth, (user) => {
+    if (user) {
+      console.log("User ID:", user.uid);
+    }
+  });
+
   // Import from CDN
   import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
   import { getFirestore, collection, addDoc, serverTimestamp, query, orderBy, onSnapshot } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
