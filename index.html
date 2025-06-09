@@ -5,14 +5,98 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DaggerSheet</title>
   <link rel="stylesheet" href="style.css" />
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Coming+Soon&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Coming+Soon&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <!-- <header id="header">
   HEADER AND NAVIGATION BAR PLACEHOLDER 
 </header> -->
 <body>
+  <!-- CHAT BOX TESTING ---------------------------------------------------------------------------------------------------------------------------------------------->
+  <div class="chat-container">
+    <div id="chat-window" class="chat-window"></div>
+    <form id="chat-form">
+      <input type="text" id="chat-input" placeholder="Type your message..." autocomplete="off">
+      <button type="submit">Send</button>
+    </form>
+  </div>
+
+<!-- [Sword Slash]{1d8+2|adv:2d8+2|crit:1d8+2+4} -->
+
+
+
+
+  <!-- Clicky stuff testing ----------------------->
+
+  <style>
+  .clickable {
+    user-select: none;
+    cursor: pointer;
+    color: black;
+  }
+  </style>
+
+  <div id="editor" contenteditable="true" style="border:2px solid black; background-color: antiquewhite; border-radius: 5px; padding:10px; width:300px; min-height:100px;"></div>
+
+  <script>
+    const editor = document.getElementById('editor');
+
+    // On input, parse text and wrap hashtags
+    editor.addEventListener('input', () => {
+      const text = editor.innerText;
+
+      // Split text by spaces, wrap hashtags in spans
+      const html = text.split(/\s+/).map(word => {
+        if (word.startsWith('#')) {
+          return `<span class="clickable">${word}</span>`;
+        }
+        return word;
+      }).join(' ');
+
+      // Save cursor position
+      const selection = window.getSelection();
+      const range = selection.getRangeAt(0);
+      const cursorPos = range.endOffset;
+
+      editor.innerHTML = html;
+
+      // Restore cursor (simple way)
+      const textNode = editor.firstChild;
+      if (textNode && textNode.length >= cursorPos) {
+        const newRange = document.createRange();
+        newRange.setStart(textNode, cursorPos);
+        newRange.collapse(true);
+        selection.removeAllRanges();
+        selection.addRange(newRange);
+      }
+    });
+
+    // Prevent default mouse down on clickable so cursor doesn't move there
+    editor.addEventListener('mousedown', (e) => {
+      if (e.target.classList.contains('clickable')) {
+        e.preventDefault();
+      }
+    });
+
+    // Toggle color on click
+    editor.addEventListener('click', (e) => {
+      if (e.target.classList.contains('clickable')) {
+        const el = e.target;
+        if (el.style.color === 'red') {
+          el.style.color = 'black';
+        } else {
+          el.style.color = 'red';
+          el.style.border = '1px solid black'
+        }
+      }
+    });
+  </script>
+
+
+
+
+
   <!--Character Sheet Container----------------------------------------------->
   <div id="character-sheet-container">
     <!--Whole Character Sheet----------------------------------------------->
@@ -394,13 +478,102 @@
                 </div>
               </div>
             </div>
-
           </div>
-
         </div> <!-- End of Right-->
       </div>
+    </div>
   </div>
-  </div>
+
+
+
+
+
+
+
+
+<!-- Firebase SDK -->
+<script type="module">
+
+  // Import from CDN
+  import { getAuth, signInAnonymously, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+  import { getFirestore, collection, addDoc, serverTimestamp, query, orderBy, onSnapshot } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+
+    // ✅ Your Firebase config
+  const firebaseConfig = {
+    apiKey: "AIzaSyDJnb-thMT8j5_mslX1_xPqar0EGV7mJNM",
+    authDomain: "dh-helper.firebaseapp.com",
+    projectId: "dh-helper",
+    storageBucket: "dh-helper.firebasestorage.app",
+    messagingSenderId: "716341287853",
+    appId: "1:716341287853:web:e52a15f38dbf3040999f24",
+    measurementId: "G-J9XM92VRCH"
+  };
+
+  // Init
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
+  const auth = getAuth(app);
+
+
+  // Anonymis authorized users 
+  signInAnonymously(auth)
+    .then(() => {
+      console.log("Signed in anonymously");
+    })
+    .catch((error) => {
+      console.error("Anonymous sign-in error", error);
+    });
+
+  onAuthStateChanged(auth, (user) => {
+    if (user) {
+      console.log("User ID:", user.uid);
+    }
+  });
+
+  // Elements
+  const chatWindow = document.getElementById("chat-window");
+  const chatForm = document.getElementById("chat-form");
+  const chatInput = document.getElementById("chat-input");
+
+  // Submit messages
+  chatForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const text = chatInput.value.trim();
+    if (text) {
+      await addDoc(collection(db, "messages"), {
+        text,
+        timestamp: serverTimestamp()
+      });
+      chatInput.value = "";
+    }
+  });
+
+  // Real-time updates
+  const q = query(collection(db, "messages"), orderBy("timestamp"));
+  onSnapshot(q, (snapshot) => {
+    chatWindow.innerHTML = "";
+    snapshot.forEach(doc => {
+      const msg = doc.data();
+      const div = document.createElement("div");
+      div.className = "chat-msg";
+      div.textContent = msg.text;
+      chatWindow.appendChild(div);
+    });
+    chatWindow.scrollTop = chatWindow.scrollHeight;
+  });
+</script>
+
+  <!-- CHAT BOX TESTING ---------------------------------------------------------------------------------------------------------------------------------------------->
+
+
+
+
+
+
+
+
+
   <script src="script.js"></script>
 </body>
 </html>
