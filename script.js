@@ -120,6 +120,12 @@ function setupMouseTooltip(className, tooltipText) {
 
 
 
+window.addEventListener('scroll', function () {
+    const scrollPosition = window.scrollY;
+    const targetDiv = document.getElementById('dice-roller__container');
+    targetDiv.style.height = (window.innerHeight - 100) + Math.min(scrollPosition, 100) + 'px';
+});
+
 
 window.addEventListener('DOMContentLoaded', () => {
   // Run all setup functions in one go

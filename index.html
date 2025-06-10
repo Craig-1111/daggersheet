@@ -9,18 +9,11 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Coming+Soon&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
-<!-- <header id="header">
-  HEADER AND NAVIGATION BAR PLACEHOLDER 
-</header> -->
 <body>
+  <header id="header">
+  HEADER AND NAVIGATION BAR PLACEHOLDER 
+</header>
   <!-- CHAT BOX TESTING --------------------------------------------------------------------------------------------------------------------------------------------
-  <div class="chat-container">
-    <div id="chat-window" class="chat-window"></div>
-    <form id="chat-form">
-      <input type="text" id="chat-input" placeholder="Type your message..." autocomplete="off">
-      <button type="submit">Send</button>
-    </form>
-  </div>
 
  [Sword Slash]{1d8+2|adv:2d8+2|crit:1d8+2+4} -->
 
@@ -97,393 +90,423 @@
 
 
 
-
+  <div id="main_container">
   <!--Character Sheet Container----------------------------------------------->
-  <div id="character-sheet-container">
-    <!--Whole Character Sheet----------------------------------------------->
-    <div id="character-sheet">
-    
-      <!--Header #1 (Generic Title/later to be class specific/, Name, Pronouns, Heritage, Class & Subclass, Level ----------------------------------------------->
-      <div id="sheet-header"> <!--For sizing we want left about 30% (fixed), right about 60%, left about 10%(fixed).  -->
+    <div id="character-sheet-container">
+      <!--Whole Character Sheet----------------------------------------------->
+      <div id="character-sheet">
+      
+        <!--Header #1 (Generic Title/later to be class specific/, Name, Pronouns, Heritage, Class & Subclass, Level ----------------------------------------------->
+        <div id="sheet-header"> <!--For sizing we want left about 30% (fixed), right about 60%, left about 10%(fixed).  -->
 
-        <!--Sheet Type--------------------------------------------------------------------------------------------------------------------->
-        <div id="sheet-header__sheet-type">
-          <div id="sheet-type__container">
-            <h1 id="sheet-type__title">DAGGERHEART</h1>
-            <p id="sheet-type__desc">COMPATIBLE CHARACTER SHEET</p>
-          </div>
-        </div>
-
-        <div id="sheet-header__right">
-        <!--Character Background Details----------------------------------------------------------------------------------------------------->
-          <div id="sheet-header__character-background-details">
-
-            <!--Character Background Details Top----->
-            <div class="character-background-details__container-horizontal-splitter">
-              <div class="character-background-details__container" id="character-background-details__name">
-                <label>NAME</label>
-                <input id="character-name" type="text">
-              </div>
-              <div class="character-background-details__container" id="character-background-details__pronouns">
-                <label>PRONOUNS</label>
-                <input id="character-pronouns" type="text">
-              </div>
-            </div>
-
-            <!--Character Background Details Bottom----->
-            <div class="character-background-details__container-horizontal-splitter">
-              <div class="character-background-details__container" id="character-background-details__heritage">
-                <label>HERITAGE</label>
-                <input id="character-heritage" type="text">
-              </div>
-              <div class="character-background-details__container" id="character-background-details__class-subclass">
-                <label>CLASS & SUBCLASS</label>
-                <input id="character-class-subclass" type="text">
-              </div>
+          <!--Sheet Type--------------------------------------------------------------------------------------------------------------------->
+          <div id="sheet-header__sheet-type">
+            <div id="sheet-type__container">
+              <h1 id="sheet-type__title">DAGGERHEART</h1>
+              <p id="sheet-type__desc">COMPATIBLE CHARACTER SHEET</p>
             </div>
           </div>
 
-          <!--Level------------------------------------------------------------------------------------------------------------------------------------>
-          <div id="sheet-header__level">
-            <img src="./images/Level-Border-No-Bkg.png" height="100px">
-            <input type="text" id="level__input" class="image-input">
-          </div>
-        </div>
-      </div>
+          <div id="sheet-header__right">
+          <!--Character Background Details----------------------------------------------------------------------------------------------------->
+            <div id="sheet-header__character-background-details">
 
-      <!--Secondary Header------------------------------------------------------------------------------------------------------------------------------------>
-      <div id="secondary-sheet-header">
+              <!--Character Background Details Top----->
+              <div class="character-background-details__container-horizontal-splitter">
+                <div class="character-background-details__container" id="character-background-details__name">
+                  <label>NAME</label>
+                  <input id="character-name" type="text">
+                </div>
+                <div class="character-background-details__container" id="character-background-details__pronouns">
+                  <label>PRONOUNS</label>
+                  <input id="character-pronouns" type="text">
+                </div>
+              </div>
 
-        <!--Evasion and Armor------------------------------------------------------------------------------------------------------------------------------------>
-        <div id="secondary-sheet-header__evasion-armor">
-          <div id="evasion-armour-box">
-            <img src="./images/Evasion+Armor-No-Bkg.png" height="100px">
-            <input type="text" id="evasion-armour-box__evasion" class="image-input">
-            <input type="text" id="evasion-armour-box__armor" class="image-input">
-          </div>
-
-          <!--Armor Slots-------->
-          <div id="armor-slot-grid">
-            <div class="armor-slot-box savedImgBtnToggle"><img id="armor-slot1" src="./images/Armor-Slot-no-bkg.png" height="30px" class="armor-slot" data-selected="false"></div>
-            <div class="armor-slot-box savedImgBtnToggle"><img id="armor-slot2" src="./images/Armor-Slot-no-bkg.png" height="30px" class="armor-slot" data-selected="false"></div>
-            <div class="armor-slot-box savedImgBtnToggle"><img id="armor-slot3" src="./images/Armor-Slot-no-bkg.png" height="30px" class="armor-slot" data-selected="false"></div>
-            <div class="armor-slot-box savedImgBtnToggle"><img id="armor-slot4" src="./images/Armor-Slot-no-bkg.png" height="30px" class="armor-slot" data-selected="false"></div>
-            <div class="armor-slot-box savedImgBtnToggle"><img id="armor-slot5" src="./images/Armor-Slot-no-bkg.png" height="30px" class="armor-slot" data-selected="false"></div>
-            <div class="armor-slot-box savedImgBtnToggle"><img id="armor-slot6" src="./images/Armor-Slot-no-bkg.png" height="30px" class="armor-slot" data-selected="false"></div>
-            <div class="armor-slot-box savedImgBtnToggle"><img id="armor-slot7" src="./images/Armor-Slot-no-bkg.png" height="30px" class="armor-slot" data-selected="false"></div>
-            <div class="armor-slot-box savedImgBtnToggle"><img id="armor-slot8" src="./images/Armor-Slot-no-bkg.png" height="30px" class="armor-slot" data-selected="false"></div>
-            <div class="armor-slot-box savedImgBtnToggle"><img id="armor-slot9" src="./images/Armor-Slot-no-bkg.png" height="30px" class="armor-slot" data-selected="false"></div>
-            <div class="armor-slot-box savedImgBtnToggle"><img id="armor-slot10" src="./images/Armor-Slot-no-bkg.png" height="30px" class="armor-slot" data-selected="false"></div>
-            <div class="armor-slot-box savedImgBtnToggle"><img id="armor-slot11" src="./images/Armor-Slot-no-bkg.png" height="30px" class="armor-slot" data-selected="false"></div>
-            <div class="armor-slot-box savedImgBtnToggle"><img id="armor-slot12" src="./images/Armor-Slot-no-bkg.png" height="30px" class="armor-slot" data-selected="false"></div>
-          </div>
-        </div>
-
-        <!--Traits-------------------------------------------------------------------------------------->
-        <div id="secondary-sheet-header__traits">
-          <div class="trait-container">
-            <img src="./images/Agility-Trait-Border-No-Bkg.png" height="90">
-            <img id="trait-agility-btn" src="./images/Trait-Empty-Button.png" height="25px" class="trait-selection-btn savedImgBtnToggle" data-selected="false">
-            <input type="text" id="trait-agility" class="trait__image-input">
-            <p>Sprint</p>
-            <p>Leap</p>
-            <p>Maneuver</p>
-            <div class="trait__separation"></div>
-          </div>
-          <div class="trait-container">
-            <img src="./images/Strength-Trait-Border-No-Bkg.png" height="90">
-            <img id="trait-strength-btn" src="./images/Trait-Empty-Button.png" height="25px" class="trait-selection-btn savedImgBtnToggle" data-selected="false">
-            <input type="text" id="trait-strength" class="trait__image-input">
-            <p>Lift</p>
-            <p>Smash</p>
-            <p>Grapple</p>
-            <div class="trait__separation"></div>
-          </div>
-          <div class="trait-container">
-            <img src="./images/Finesse-Trait-Border-No-Bkg.png" height="90">
-            <img id="trait-finesse-btn" src="./images/Trait-Empty-Button.png" height="25px" class="trait-selection-btn savedImgBtnToggle" data-selected="false">
-            <input type="text" id="trait-finesse" class="trait__image-input">
-            <p>Control</p>
-            <p>Hide</p>
-            <p>Tinker</p>
-            <div id="finese-trait__separation" class="trait__separation"></div>
-          </div>
-          <div class="trait-container">
-            <img src="./images/Instinct-Trait-Border-No-Bkg.png" height="90">
-            <img id="trait-instinct-btn" src="./images/Trait-Empty-Button.png" height="25px" class="trait-selection-btn savedImgBtnToggle" data-selected="false">
-            <input type="text" id="trait-instinct" class="trait__image-input">
-            <p>Perceive</p>
-            <p>Sense</p>
-            <p>Navigate</p>
-            <div class="trait__separation"></div>
-          </div>
-          <div class="trait-container">
-            <img src="./images/Presence-Trait-Border-No-Bkg.png" height="90">
-            <img id="trait-presence-btn" src="./images/Trait-Empty-Button.png" height="25px" class="trait-selection-btn savedImgBtnToggle" data-selected="false">
-            <input type="text" id="trait-presence" class="trait__image-input">
-            <p>Charm</p>
-            <p>Perform</p>
-            <p>Deceive</p>
-            <div class="trait__separation"></div>
-          </div>
-          <div class="trait-container">
-            <img src="./images/Knowledge-Trait-Border-No-Bkg.png" height="90">
-            <img id="trait-knowledge-btn" src="./images/Trait-Empty-Button.png" height="25px" class="trait-selection-btn savedImgBtnToggle" data-selected="false">
-            <input type="text" id="trait-knowledge" class="trait__image-input">
-            <p>Recall</p>
-            <p>Analyze</p>
-            <p>Comprehend</p>
-          </div>
-        </div>
-      </div>
-
-      <!--Character Sheet Body------------------------------------------------------------------------->
-      <div id="character-sheet-body">
-
-        <!--Character Sheet Left---------------------------------->
-        <div id="character-sheet-body__left" class="character-sheet-body__section">
-
-          <!--Damage and Health---------------------------------->
-          <div id="damage-health__container" class="character-sheet-body__container">
-
-            <!--Damage and Health Title -->
-            <div id="damage-health__title" class="character-sheet-body__container-title-top"><img src="./images/Damage-Health-Title-No-Bkg.png" width="400px" class="character-sheet-body__container-title__img"></div>
-            
-            <!--Damage and Health Body -->
-            <div class="character-sheet-body__container-desc">
-              <p>Add your current level to your damage thresholds.</p>
+              <!--Character Background Details Bottom----->
+              <div class="character-background-details__container-horizontal-splitter">
+                <div class="character-background-details__container" id="character-background-details__heritage">
+                  <label>HERITAGE</label>
+                  <input id="character-heritage" type="text">
+                </div>
+                <div class="character-background-details__container" id="character-background-details__class-subclass">
+                  <label>CLASS & SUBCLASS</label>
+                  <input id="character-class-subclass" type="text">
+                </div>
+              </div>
             </div>
-            <div id="damage-thresholds__container">
-              <img src="./images/Damage-Thresholds.png" width="500px">
-              <input class="damage-thresholds__input" id="damage-thresholds__input1">
-              <input class="damage-thresholds__input" id="damage-thresholds__input2">
-              <div class="damage-thresholds__p" id="damage-thresholds__p1"><p>Mark 1 HP</p></div>
-              <div class="damage-thresholds__p" id="damage-thresholds__p2"><p>Mark 2 HP</p></div>
-              <div class="damage-thresholds__p" id="damage-thresholds__p3"><p>Mark 3 HP</p></div>
+
+            <!--Level------------------------------------------------------------------------------------------------------------------------------------>
+            <div id="sheet-header__level">
+              <img src="./images/Level-Border-No-Bkg.png" height="100px">
+              <input type="text" id="level__input" class="image-input">
             </div>
-            <div id="hp__container">
-              <p>HP</p>
-              <img id="hp-btn1" src="./images/Stress-Btn-Blank.png" class="hp-stress-btn" data-state='blank'>
-              <img id="hp-btn2" src="./images/Stress-Btn-Blank.png" class="hp-stress-btn" data-state='blank'>
-              <img id="hp-btn3" src="./images/Stress-Btn-Blank.png" class="hp-stress-btn" data-state='blank'>
-              <img id="hp-btn4" src="./images/Stress-Btn-Blank.png" class="hp-stress-btn" data-state='blank'>
-              <img id="hp-btn5" src="./images/Stress-Btn-Blank.png" class="hp-stress-btn" data-state='blank'>
-              <img id="hp-btn6" src="./images/Stress-Btn-Empty.png" class="hp-stress-btn" data-state='empty'>
-              <img id="hp-btn7" src="./images/Stress-Btn-Empty.png" class="hp-stress-btn" data-state='empty'>
-              <img id="hp-btn8" src="./images/Stress-Btn-Empty.png" class="hp-stress-btn" data-state='empty'>
-              <img id="hp-btn9" src="./images/Stress-Btn-Empty.png" class="hp-stress-btn" data-state='empty'>
-              <img id="hp-btn10" src="./images/Stress-Btn-Empty.png" class="hp-stress-btn" data-state='empty'>
-              <img id="hp-btn11" src="./images/Stress-Btn-Empty.png" class="hp-stress-btn" data-state='empty'>
-              <img id="hp-btn12" src="./images/Stress-Btn-Empty.png" class="hp-stress-btn" data-state='empty'>
+          </div>
+        </div>
+
+        <!--Secondary Header------------------------------------------------------------------------------------------------------------------------------------>
+        <div id="secondary-sheet-header">
+
+          <!--Evasion and Armor------------------------------------------------------------------------------------------------------------------------------------>
+          <div id="secondary-sheet-header__evasion-armor">
+            <div id="evasion-armour-box">
+              <img src="./images/Evasion+Armor-No-Bkg.png" height="100px">
+              <input type="text" id="evasion-armour-box__evasion" class="image-input">
+              <input type="text" id="evasion-armour-box__armor" class="image-input">
+            </div>
+
+            <!--Armor Slots-------->
+            <div id="armor-slot-grid">
+              <div class="armor-slot-box savedImgBtnToggle"><img id="armor-slot1" src="./images/Armor-Slot-no-bkg.png" height="30px" class="armor-slot" data-selected="false"></div>
+              <div class="armor-slot-box savedImgBtnToggle"><img id="armor-slot2" src="./images/Armor-Slot-no-bkg.png" height="30px" class="armor-slot" data-selected="false"></div>
+              <div class="armor-slot-box savedImgBtnToggle"><img id="armor-slot3" src="./images/Armor-Slot-no-bkg.png" height="30px" class="armor-slot" data-selected="false"></div>
+              <div class="armor-slot-box savedImgBtnToggle"><img id="armor-slot4" src="./images/Armor-Slot-no-bkg.png" height="30px" class="armor-slot" data-selected="false"></div>
+              <div class="armor-slot-box savedImgBtnToggle"><img id="armor-slot5" src="./images/Armor-Slot-no-bkg.png" height="30px" class="armor-slot" data-selected="false"></div>
+              <div class="armor-slot-box savedImgBtnToggle"><img id="armor-slot6" src="./images/Armor-Slot-no-bkg.png" height="30px" class="armor-slot" data-selected="false"></div>
+              <div class="armor-slot-box savedImgBtnToggle"><img id="armor-slot7" src="./images/Armor-Slot-no-bkg.png" height="30px" class="armor-slot" data-selected="false"></div>
+              <div class="armor-slot-box savedImgBtnToggle"><img id="armor-slot8" src="./images/Armor-Slot-no-bkg.png" height="30px" class="armor-slot" data-selected="false"></div>
+              <div class="armor-slot-box savedImgBtnToggle"><img id="armor-slot9" src="./images/Armor-Slot-no-bkg.png" height="30px" class="armor-slot" data-selected="false"></div>
+              <div class="armor-slot-box savedImgBtnToggle"><img id="armor-slot10" src="./images/Armor-Slot-no-bkg.png" height="30px" class="armor-slot" data-selected="false"></div>
+              <div class="armor-slot-box savedImgBtnToggle"><img id="armor-slot11" src="./images/Armor-Slot-no-bkg.png" height="30px" class="armor-slot" data-selected="false"></div>
+              <div class="armor-slot-box savedImgBtnToggle"><img id="armor-slot12" src="./images/Armor-Slot-no-bkg.png" height="30px" class="armor-slot" data-selected="false"></div>
+            </div>
+          </div>
+
+          <!--Traits-------------------------------------------------------------------------------------->
+          <div id="secondary-sheet-header__traits">
+            <div class="trait-container">
+              <img src="./images/Agility-Trait-Border-No-Bkg.png" height="90">
+              <img id="trait-agility-btn" src="./images/Trait-Empty-Button.png" height="25px" class="trait-selection-btn savedImgBtnToggle" data-selected="false">
+              <input type="text" id="trait-agility" class="trait__image-input">
+              <p>Sprint</p>
+              <p>Leap</p>
+              <p>Maneuver</p>
+              <div class="trait__separation"></div>
+            </div>
+            <div class="trait-container">
+              <img src="./images/Strength-Trait-Border-No-Bkg.png" height="90">
+              <img id="trait-strength-btn" src="./images/Trait-Empty-Button.png" height="25px" class="trait-selection-btn savedImgBtnToggle" data-selected="false">
+              <input type="text" id="trait-strength" class="trait__image-input">
+              <p>Lift</p>
+              <p>Smash</p>
+              <p>Grapple</p>
+              <div class="trait__separation"></div>
+            </div>
+            <div class="trait-container">
+              <img src="./images/Finesse-Trait-Border-No-Bkg.png" height="90">
+              <img id="trait-finesse-btn" src="./images/Trait-Empty-Button.png" height="25px" class="trait-selection-btn savedImgBtnToggle" data-selected="false">
+              <input type="text" id="trait-finesse" class="trait__image-input">
+              <p>Control</p>
+              <p>Hide</p>
+              <p>Tinker</p>
+              <div id="finese-trait__separation" class="trait__separation"></div>
+            </div>
+            <div class="trait-container">
+              <img src="./images/Instinct-Trait-Border-No-Bkg.png" height="90">
+              <img id="trait-instinct-btn" src="./images/Trait-Empty-Button.png" height="25px" class="trait-selection-btn savedImgBtnToggle" data-selected="false">
+              <input type="text" id="trait-instinct" class="trait__image-input">
+              <p>Perceive</p>
+              <p>Sense</p>
+              <p>Navigate</p>
+              <div class="trait__separation"></div>
+            </div>
+            <div class="trait-container">
+              <img src="./images/Presence-Trait-Border-No-Bkg.png" height="90">
+              <img id="trait-presence-btn" src="./images/Trait-Empty-Button.png" height="25px" class="trait-selection-btn savedImgBtnToggle" data-selected="false">
+              <input type="text" id="trait-presence" class="trait__image-input">
+              <p>Charm</p>
+              <p>Perform</p>
+              <p>Deceive</p>
+              <div class="trait__separation"></div>
+            </div>
+            <div class="trait-container">
+              <img src="./images/Knowledge-Trait-Border-No-Bkg.png" height="90">
+              <img id="trait-knowledge-btn" src="./images/Trait-Empty-Button.png" height="25px" class="trait-selection-btn savedImgBtnToggle" data-selected="false">
+              <input type="text" id="trait-knowledge" class="trait__image-input">
+              <p>Recall</p>
+              <p>Analyze</p>
+              <p>Comprehend</p>
+            </div>
+          </div>
+        </div>
+
+        <!--Character Sheet Body------------------------------------------------------------------------->
+        <div id="character-sheet-body">
+
+          <!--Character Sheet Left---------------------------------->
+          <div id="character-sheet-body__left" class="character-sheet-body__section">
+
+            <!--Damage and Health---------------------------------->
+            <div id="damage-health__container" class="character-sheet-body__container">
+
+              <!--Damage and Health Title -->
+              <div id="damage-health__title" class="character-sheet-body__container-title-top"><img src="./images/Damage-Health-Title-No-Bkg.png" width="400px" class="character-sheet-body__container-title__img"></div>
               
-            </div>
-            <div id="stress__container">
-              <p>STRESS</p>
-              <img id="stress-btn1" src="./images/Stress-Btn-Blank.png" class="hp-stress-btn" data-state='blank'>
-              <img id="stress-btn2" src="./images/Stress-Btn-Blank.png" class="hp-stress-btn" data-state='blank'>
-              <img id="stress-btn3" src="./images/Stress-Btn-Blank.png" class="hp-stress-btn" data-state='blank'>
-              <img id="stress-btn4" src="./images/Stress-Btn-Blank.png" class="hp-stress-btn" data-state='blank'>
-              <img id="stress-btn5" src="./images/Stress-Btn-Blank.png" class="hp-stress-btn" data-state='blank'>
-              <img id="stress-btn6" src="./images/Stress-Btn-Empty.png" class="hp-stress-btn" data-state='empty'>
-              <img id="stress-btn7" src="./images/Stress-Btn-Empty.png" class="hp-stress-btn" data-state='empty'>
-              <img id="stress-btn8" src="./images/Stress-Btn-Empty.png" class="hp-stress-btn" data-state='empty'>
-              <img id="stress-btn9" src="./images/Stress-Btn-Empty.png" class="hp-stress-btn" data-state='empty'>
-              <img id="stress-btn10" src="./images/Stress-Btn-Empty.png" class="hp-stress-btn" data-state='empty'>
-              <img id="stress-btn11" src="./images/Stress-Btn-Empty.png" class="hp-stress-btn" data-state='empty'>
-              <img id="stress-btn12" src="./images/Stress-Btn-Empty.png" class="hp-stress-btn" data-state='empty'>
-            </div>
-            <div id="mouse-tooltip" style="
-              position: fixed;
-              pointer-events: none;
-              background: #333;
-              color: white;
-              padding: 5px 8px;
-              border-radius: 4px;
-              font-size: 0.8rem;
-              opacity: 0;
-              transition: opacity 0.2s ease;
-              z-index: 9999;
-              white-space: nowrap;
-            ">
-              Left click to remove
-            </div>
-          </div>
-
-          <!--Hope---------------------------------->
-          <div id="hope__container" class="character-sheet-body__container">
-            <!--Hope Title -->
-            <div id="hope__title" class="character-sheet-body__container-title"><img src="./images/Hope-Title-No-Bkg.png" width="400px" class="character-sheet-body__container-title__img"></div>
-            <div class="character-sheet-body__container-desc">
-              <p>Spend a Hope to use an experience or help an ally.</p>
-            </div>
-            <div id="hope-holder__container">
-              <img id="hope-holder-box" src="./images/Hope-Slot-Holder.png" height="35px">
-              <img class="hope-slot" id="hope-slot1" src="./images/Hope-Slot-Empty.png" height="35px">
-              <img class="hope-slot" id="hope-slot2" src="./images/Hope-Slot-Empty.png" height="35px">
-              <img class="hope-slot" id="hope-slot3" src="./images/Hope-Slot-Empty.png" height="35px">
-              <img class="hope-slot" id="hope-slot4" src="./images/Hope-Slot-Empty.png" height="35px">
-              <img class="hope-slot" id="hope-slot5" src="./images/Hope-Slot-Empty.png" height="35px">
-              <img class="hope-slot" id="hope-slot6" src="./images/Hope-Slot-Empty.png" height="35px">
-            </div>
-            <div id="hope-feature__container" class="character-sheet__text-box">
-              <input id="hope-feature__input" class="character-sheet__text-line">
-              <label id="hope-feature__label" class="character-sheet__text-line-label">HOPE FEATURE</label>
-            </div>
-          </div>
-
-          <!--Experience-->
-          <div id="experience__container" class="character-sheet-body__container">
-            <div id="experience__title" class="character-sheet-body__container-title"><img src="./images/Experience-Title-No-Bkg.png" width="400px" class="character-sheet-body__container-title__img"></div>
-            <div id="experience__text1" class="experience-text__box">
-              <input id="character-experience-1" class="experience-text__desc character-sheet__text-line">
-              <input id="character-experience-1b" class="experience-text__bonus character-sheet__text-line">
-            </div>
-            <div class="experience-text__box">
-              <input id="character-experience-2" class="experience-text__desc character-sheet__text-line">
-              <input id="character-experience-2b" class="experience-text__bonus character-sheet__text-line">
-            </div>
-            <div class="experience-text__box">
-              <input id="character-experience-3" class="experience-text__desc character-sheet__text-line">
-              <input id="character-experience-3b" class="experience-text__bonus character-sheet__text-line">
-            </div>
-            <div class="experience-text__box">
-              <input id="character-experience-4" class="experience-text__desc character-sheet__text-line">
-              <input id="character-experience-4b" class="experience-text__bonus character-sheet__text-line">
-            </div>
-            <div class="experience-text__box">
-              <input id="character-experience-5" class="experience-text__desc character-sheet__text-line">
-              <input id="character-experience-5b" class="experience-text__bonus character-sheet__text-line">
-            </div>
-          </div>
-
-          <!--Class Features---------->
-          <div id="class-features__container" class="character-sheet-body__container">
-            <div id="class-features__title" class="character-sheet-body__container-title"><img src="./images/Class-Feature-Title.png" width="400px" class="character-sheet-body__container-title__img"></div>
-            <input id="class-features__desc1" class="class-features__desc character-sheet__text-line">
-            <input id="class-features__desc2" class="class-features__desc character-sheet__text-line">
-            <input id="class-features__desc3" class="class-features__desc character-sheet__text-line">
-            <input id="class-features__desc4" class="class-features__desc character-sheet__text-line">
-            <input id="class-features__desc5" class="class-features__desc character-sheet__text-line">
-          </div>
-        </div> <!--End of Character Sheet Left-->
-
-        <!--Character Sheet Right---------------------------------->
-        <div id="character-sheet-body__right" class="character-sheet-body__section">
-
-          <!--Active Weapons---------------------------------->
-          <div id="active-weapons__container" class="character-sheet-body__container">
-            <div id="active-weapons__title" class="character-sheet-body__container-title-top">
-              <img src="./images/Active-Weapons-Title-No-Bkg.png" width="400px" class="character-sheet-body__container-title__img">
-              <img> <!-- background-->
-              <img id="active-weapon_hand1" class="weapon_hand-left weapon_hand" src="./images/Active-Weapons-Title-Left-Hand-No-Bkg.png" height="42px"> <!-- 2 hands -->
-              <img id="active-weapon_hand2" class="weapon_hand-right weapon_hand" src="./images/Active-Weapons-Title-Right-Hand-No-Bkg.png" height="42px"> <!-- 2 hands -->
-              <img id="proficiency_btn1" class="proficiency_btn" src="./images/Trait-Empty-Button.png" height="20.5px"> <!-- prof -->
-              <img id="proficiency_btn2" class="proficiency_btn" src="./images/Trait-Empty-Button.png" height="20.5px"> <!-- prof -->
-              <img id="proficiency_btn3" class="proficiency_btn" src="./images/Trait-Empty-Button.png" height="20.5px"> <!-- prof -->
-              <img id="proficiency_btn4" class="proficiency_btn" src="./images/Trait-Empty-Button.png" height="20.5px"> <!-- prof -->
-              <img id="proficiency_btn5" class="proficiency_btn" src="./images/Trait-Empty-Button.png" height="20.5px"> <!-- prof -->
-            </div>
-            <div id="primary-weapon__container" class="weapon__container">
-              <div id="primary-weapon__title-box" class="weapon__title-box">
-               <p class="weapon-title__main">PRIMARY</p>
+              <!--Damage and Health Body -->
+              <div class="character-sheet-body__container-desc">
+                <p>Add your current level to your damage thresholds.</p>
               </div>
-              <div id="primary-weapon__desc-box" class="weapon__desc-box">
-                <div id="primary-weapon__name" class="weapon__name">
-                  <input id="primary-weapon__name-input" class="character-sheet__text-line weapon__name-input">
-                  <label id="primary-weapon__name-label" class="character-sheet__text-line-label  ">NAME</label>
-                </div>
-                <div id="primary-weapon__trait-range" class="weapon__trait-range">
-                  <input id="primary-weapon__trait-range-input" class="character-sheet__text-line weapon__trait-range-input" >
-                  <label id="primary-weapon__trait-range-label" class="character-sheet__text-line-label weapon__trait-range-label">TRAIT & RANGE</label>
-                </div>
-                <div id="primary-weapon__damage-type" class="weapon__damage-type">
-                  <input id="primary-weapon__damage-type-input" class="character-sheet__text-line weapon__damage-type-input">
-                  <label id="primary-weapon__damage-type-label" class="character-sheet__text-line-label weapon__damage-type-label">DAMAGE DICE & TYPE</label>
-                </div>
+              <div id="damage-thresholds__container">
+                <img src="./images/Damage-Thresholds.png" width="500px">
+                <input class="damage-thresholds__input" id="damage-thresholds__input1">
+                <input class="damage-thresholds__input" id="damage-thresholds__input2">
+                <div class="damage-thresholds__p" id="damage-thresholds__p1"><p>Mark 1 HP</p></div>
+                <div class="damage-thresholds__p" id="damage-thresholds__p2"><p>Mark 2 HP</p></div>
+                <div class="damage-thresholds__p" id="damage-thresholds__p3"><p>Mark 3 HP</p></div>
               </div>
-              <div id="primary-weapon__feature-box" class="weapon__feature-box">
-                <input id="primary-weapon__feature-input" class="character-sheet__text-line">
-                  <label id="primary-weapon__feature-label" class="character-sheet__text-line-label">FEATURE</label>
+              <div id="hp__container">
+                <p>HP</p>
+                <img id="hp-btn1" src="./images/Stress-Btn-Blank.png" class="hp-stress-btn" data-state='blank'>
+                <img id="hp-btn2" src="./images/Stress-Btn-Blank.png" class="hp-stress-btn" data-state='blank'>
+                <img id="hp-btn3" src="./images/Stress-Btn-Blank.png" class="hp-stress-btn" data-state='blank'>
+                <img id="hp-btn4" src="./images/Stress-Btn-Blank.png" class="hp-stress-btn" data-state='blank'>
+                <img id="hp-btn5" src="./images/Stress-Btn-Blank.png" class="hp-stress-btn" data-state='blank'>
+                <img id="hp-btn6" src="./images/Stress-Btn-Empty.png" class="hp-stress-btn" data-state='empty'>
+                <img id="hp-btn7" src="./images/Stress-Btn-Empty.png" class="hp-stress-btn" data-state='empty'>
+                <img id="hp-btn8" src="./images/Stress-Btn-Empty.png" class="hp-stress-btn" data-state='empty'>
+                <img id="hp-btn9" src="./images/Stress-Btn-Empty.png" class="hp-stress-btn" data-state='empty'>
+                <img id="hp-btn10" src="./images/Stress-Btn-Empty.png" class="hp-stress-btn" data-state='empty'>
+                <img id="hp-btn11" src="./images/Stress-Btn-Empty.png" class="hp-stress-btn" data-state='empty'>
+                <img id="hp-btn12" src="./images/Stress-Btn-Empty.png" class="hp-stress-btn" data-state='empty'>
+                
+              </div>
+              <div id="stress__container">
+                <p>STRESS</p>
+                <img id="stress-btn1" src="./images/Stress-Btn-Blank.png" class="hp-stress-btn" data-state='blank'>
+                <img id="stress-btn2" src="./images/Stress-Btn-Blank.png" class="hp-stress-btn" data-state='blank'>
+                <img id="stress-btn3" src="./images/Stress-Btn-Blank.png" class="hp-stress-btn" data-state='blank'>
+                <img id="stress-btn4" src="./images/Stress-Btn-Blank.png" class="hp-stress-btn" data-state='blank'>
+                <img id="stress-btn5" src="./images/Stress-Btn-Blank.png" class="hp-stress-btn" data-state='blank'>
+                <img id="stress-btn6" src="./images/Stress-Btn-Empty.png" class="hp-stress-btn" data-state='empty'>
+                <img id="stress-btn7" src="./images/Stress-Btn-Empty.png" class="hp-stress-btn" data-state='empty'>
+                <img id="stress-btn8" src="./images/Stress-Btn-Empty.png" class="hp-stress-btn" data-state='empty'>
+                <img id="stress-btn9" src="./images/Stress-Btn-Empty.png" class="hp-stress-btn" data-state='empty'>
+                <img id="stress-btn10" src="./images/Stress-Btn-Empty.png" class="hp-stress-btn" data-state='empty'>
+                <img id="stress-btn11" src="./images/Stress-Btn-Empty.png" class="hp-stress-btn" data-state='empty'>
+                <img id="stress-btn12" src="./images/Stress-Btn-Empty.png" class="hp-stress-btn" data-state='empty'>
+              </div>
+              <div id="mouse-tooltip" style="
+                position: fixed;
+                pointer-events: none;
+                background: #333;
+                color: white;
+                padding: 5px 8px;
+                border-radius: 4px;
+                font-size: 0.8rem;
+                opacity: 0;
+                transition: opacity 0.2s ease;
+                z-index: 9999;
+                white-space: nowrap;
+              ">
+                Left click to remove
               </div>
             </div>
 
-            <!--Secondary Weapon-->
-            <div id="secondary-weapon__container" class="weapon__container">
-              <div id="secondary-weapon__title-box" class="weapon__title-box">
-               <p class="weapon-title__main">SECONDARY</p>
+            <!--Hope---------------------------------->
+            <div id="hope__container" class="character-sheet-body__container">
+              <!--Hope Title -->
+              <div id="hope__title" class="character-sheet-body__container-title"><img src="./images/Hope-Title-No-Bkg.png" width="400px" class="character-sheet-body__container-title__img"></div>
+              <div class="character-sheet-body__container-desc">
+                <p>Spend a Hope to use an experience or help an ally.</p>
               </div>
-              <div id="secondary-weapon__desc-box" class="weapon__desc-box">
-                <div id="secondary-weapon__name" class="weapon__name">
-                  <input id="secondary-weapon__name-input" class="character-sheet__text-line weapon__name-input">
-                  <label id="secondary-weapon__name-label" class="character-sheet__text-line-label">NAME</label>
-                </div>
-                <div id="secondary-weapon__trait-range" class="weapon__trait-range">
-                  <input id="secondary-weapon__trait-range-input" class="character-sheet__text-line weapon__trait-range-input" >
-                  <label id="secondary-weapon__trait-range-label" class="character-sheet__text-line-label weapon__trait-range-label">TRAIT & RANGE</label>
-                </div>
-                <div id="secondary-weapon__damage-type" class="weapon__damage-type">
-                  <input id="secondary-weapon__damage-type-input" class="character-sheet__text-line weapon__damage-type-input">
-                  <label id="secondary-weapon__damage-type-label" class="character-sheet__text-line-label weapon__damage-type-label">DAMAGE DICE & TYPE</label>
-                </div>
+              <div id="hope-holder__container">
+                <img id="hope-holder-box" src="./images/Hope-Slot-Holder.png" height="35px">
+                <img class="hope-slot" id="hope-slot1" src="./images/Hope-Slot-Empty.png" height="35px">
+                <img class="hope-slot" id="hope-slot2" src="./images/Hope-Slot-Empty.png" height="35px">
+                <img class="hope-slot" id="hope-slot3" src="./images/Hope-Slot-Empty.png" height="35px">
+                <img class="hope-slot" id="hope-slot4" src="./images/Hope-Slot-Empty.png" height="35px">
+                <img class="hope-slot" id="hope-slot5" src="./images/Hope-Slot-Empty.png" height="35px">
+                <img class="hope-slot" id="hope-slot6" src="./images/Hope-Slot-Empty.png" height="35px">
               </div>
-              <div id="secondary-weapon__feature-box" class="weapon__feature-box">
-                <input id="secondary-weapon__feature-input" class="character-sheet__text-line">
-                  <label id="secondary-weapon__feature-label" class="character-sheet__text-line-label">FEATURE</label>
+              <div id="hope-feature__container" class="character-sheet__text-box">
+                <input id="hope-feature__input" class="character-sheet__text-line">
+                <label id="hope-feature__label" class="character-sheet__text-line-label">HOPE FEATURE</label>
               </div>
             </div>
-          </div>
 
-          <!--Active Armor-->
-          <div id="active-armor__container" class="character-sheet-body__container">
-            <div id="active-armor__title" class="character-sheet-body__container-title"><img src="./images/Active-Armor-Title.png" width="400px" class="character-sheet-body__container-title__img"></div>
-            <div class="weapon__container armor__container">
-              <div  class="weapon__desc-box armor__desc-box">
-                <div id="armor__name" class="weapon__name">
-                  <input id="active-armor-name" class="character-sheet__text-line weapon__name-input">
-                  <label class="character-sheet__text-line-label">NAME</label>
-                </div>
-                <div id="armor__base-thresholds" class="weapon__trait-range">
-                  <input id="active-armor-base-thresholds" class="character-sheet__text-line weapon__trait-range-input" >
-                  <label class="character-sheet__text-line-label weapon__trait-range-label">BASE THRESHOLDS</label>
-                </div>
-                <div id="armor__base-score"  class="weapon__damage-type">
-                  <input id="active-armor-base-score" class="character-sheet__text-line weapon__damage-type-input">
-                  <label class="character-sheet__text-line-label weapon__damage-type-label">BASE SCORE</label>
-                </div>
+            <!--Experience-->
+            <div id="experience__container" class="character-sheet-body__container">
+              <div id="experience__title" class="character-sheet-body__container-title"><img src="./images/Experience-Title-No-Bkg.png" width="400px" class="character-sheet-body__container-title__img"></div>
+              <div id="experience__text1" class="experience-text__box">
+                <input id="character-experience-1" class="experience-text__desc character-sheet__text-line">
+                <input id="character-experience-1b" class="experience-text__bonus character-sheet__text-line">
               </div>
-              <div class="weapon__feature-box">
-                <input id="active-armor-feature" class="character-sheet__text-line">
-                <label class="character-sheet__text-line-label">FEATURE</label>
+              <div class="experience-text__box">
+                <input id="character-experience-2" class="experience-text__desc character-sheet__text-line">
+                <input id="character-experience-2b" class="experience-text__bonus character-sheet__text-line">
               </div>
-            </div>
-          </div>
-
-          <!--Gold/Inventory-->
-          <div id="inventory-gold__container" class="character-sheet-body__container">
-
-            <!--gold-->
-            <div id="gold__container">
-              <div id="gold__title"><p class="weapon-title__main">GOLD</p></div>
-              <div id="gold__box">
-                <div id="handful__box">
-                  <img src="./images/Handfuls-Img.png" height="20px">
-                  <label class="character-sheet__text-line-label gold-inv__label">HANDFULS</label>
-                </div>
-                <div id="bags__box">
-                  <img src="./images/Bags-Img.png" height="30px">
-                  <label class="character-sheet__text-line-label gold-inv__label">BAGS</label>
-                </div>
-                <div id="chest__box">
-                  <img src="./images/Chest-Img.png" height="30px" width="30px">
-                  <label class="character-sheet__text-line-label gold-inv__label">CHEST</label>
-                </div>
+              <div class="experience-text__box">
+                <input id="character-experience-3" class="experience-text__desc character-sheet__text-line">
+                <input id="character-experience-3b" class="experience-text__bonus character-sheet__text-line">
+              </div>
+              <div class="experience-text__box">
+                <input id="character-experience-4" class="experience-text__desc character-sheet__text-line">
+                <input id="character-experience-4b" class="experience-text__bonus character-sheet__text-line">
+              </div>
+              <div class="experience-text__box">
+                <input id="character-experience-5" class="experience-text__desc character-sheet__text-line">
+                <input id="character-experience-5b" class="experience-text__bonus character-sheet__text-line">
               </div>
             </div>
-          </div>
-        </div> <!-- End of Right-->
+
+            <!--Class Features---------->
+            <div id="class-features__container" class="character-sheet-body__container">
+              <div id="class-features__title" class="character-sheet-body__container-title"><img src="./images/Class-Feature-Title.png" width="400px" class="character-sheet-body__container-title__img"></div>
+              <input id="class-features__desc1" class="class-features__desc character-sheet__text-line">
+              <input id="class-features__desc2" class="class-features__desc character-sheet__text-line">
+              <input id="class-features__desc3" class="class-features__desc character-sheet__text-line">
+              <input id="class-features__desc4" class="class-features__desc character-sheet__text-line">
+              <input id="class-features__desc5" class="class-features__desc character-sheet__text-line">
+            </div>
+          </div> <!--End of Character Sheet Left-->
+
+          <!--Character Sheet Right---------------------------------->
+          <div id="character-sheet-body__right" class="character-sheet-body__section">
+
+            <!--Active Weapons---------------------------------->
+            <div id="active-weapons__container" class="character-sheet-body__container">
+              <div id="active-weapons__title" class="character-sheet-body__container-title-top">
+                <img src="./images/Active-Weapons-Title-No-Bkg.png" width="400px" class="character-sheet-body__container-title__img">
+                <img> <!-- background-->
+                <img id="active-weapon_hand1" class="weapon_hand-left weapon_hand" src="./images/Active-Weapons-Title-Left-Hand-No-Bkg.png" height="42px"> <!-- 2 hands -->
+                <img id="active-weapon_hand2" class="weapon_hand-right weapon_hand" src="./images/Active-Weapons-Title-Right-Hand-No-Bkg.png" height="42px"> <!-- 2 hands -->
+                <img id="proficiency_btn1" class="proficiency_btn" src="./images/Trait-Empty-Button.png" height="20.5px"> <!-- prof -->
+                <img id="proficiency_btn2" class="proficiency_btn" src="./images/Trait-Empty-Button.png" height="20.5px"> <!-- prof -->
+                <img id="proficiency_btn3" class="proficiency_btn" src="./images/Trait-Empty-Button.png" height="20.5px"> <!-- prof -->
+                <img id="proficiency_btn4" class="proficiency_btn" src="./images/Trait-Empty-Button.png" height="20.5px"> <!-- prof -->
+                <img id="proficiency_btn5" class="proficiency_btn" src="./images/Trait-Empty-Button.png" height="20.5px"> <!-- prof -->
+              </div>
+              <div id="primary-weapon__container" class="weapon__container">
+                <div id="primary-weapon__title-box" class="weapon__title-box">
+                <p class="weapon-title__main">PRIMARY</p>
+                </div>
+                <div id="primary-weapon__desc-box" class="weapon__desc-box">
+                  <div id="primary-weapon__name" class="weapon__name">
+                    <input id="primary-weapon__name-input" class="character-sheet__text-line weapon__name-input">
+                    <label id="primary-weapon__name-label" class="character-sheet__text-line-label  ">NAME</label>
+                  </div>
+                  <div id="primary-weapon__trait-range" class="weapon__trait-range">
+                    <input id="primary-weapon__trait-range-input" class="character-sheet__text-line weapon__trait-range-input" >
+                    <label id="primary-weapon__trait-range-label" class="character-sheet__text-line-label weapon__trait-range-label">TRAIT & RANGE</label>
+                  </div>
+                  <div id="primary-weapon__damage-type" class="weapon__damage-type">
+                    <input id="primary-weapon__damage-type-input" class="character-sheet__text-line weapon__damage-type-input">
+                    <label id="primary-weapon__damage-type-label" class="character-sheet__text-line-label weapon__damage-type-label">DAMAGE DICE & TYPE</label>
+                  </div>
+                </div>
+                <div id="primary-weapon__feature-box" class="weapon__feature-box">
+                  <input id="primary-weapon__feature-input" class="character-sheet__text-line">
+                    <label id="primary-weapon__feature-label" class="character-sheet__text-line-label">FEATURE</label>
+                </div>
+              </div>
+
+              <!--Secondary Weapon-->
+              <div id="secondary-weapon__container" class="weapon__container">
+                <div id="secondary-weapon__title-box" class="weapon__title-box">
+                <p class="weapon-title__main">SECONDARY</p>
+                </div>
+                <div id="secondary-weapon__desc-box" class="weapon__desc-box">
+                  <div id="secondary-weapon__name" class="weapon__name">
+                    <input id="secondary-weapon__name-input" class="character-sheet__text-line weapon__name-input">
+                    <label id="secondary-weapon__name-label" class="character-sheet__text-line-label">NAME</label>
+                  </div>
+                  <div id="secondary-weapon__trait-range" class="weapon__trait-range">
+                    <input id="secondary-weapon__trait-range-input" class="character-sheet__text-line weapon__trait-range-input" >
+                    <label id="secondary-weapon__trait-range-label" class="character-sheet__text-line-label weapon__trait-range-label">TRAIT & RANGE</label>
+                  </div>
+                  <div id="secondary-weapon__damage-type" class="weapon__damage-type">
+                    <input id="secondary-weapon__damage-type-input" class="character-sheet__text-line weapon__damage-type-input">
+                    <label id="secondary-weapon__damage-type-label" class="character-sheet__text-line-label weapon__damage-type-label">DAMAGE DICE & TYPE</label>
+                  </div>
+                </div>
+                <div id="secondary-weapon__feature-box" class="weapon__feature-box">
+                  <input id="secondary-weapon__feature-input" class="character-sheet__text-line">
+                    <label id="secondary-weapon__feature-label" class="character-sheet__text-line-label">FEATURE</label>
+                </div>
+              </div>
+            </div>
+
+            <!--Active Armor-->
+            <div id="active-armor__container" class="character-sheet-body__container">
+              <div id="active-armor__title" class="character-sheet-body__container-title"><img src="./images/Active-Armor-Title.png" width="400px" class="character-sheet-body__container-title__img"></div>
+              <div class="weapon__container armor__container">
+                <div  class="weapon__desc-box armor__desc-box">
+                  <div id="armor__name" class="weapon__name">
+                    <input id="active-armor-name" class="character-sheet__text-line weapon__name-input">
+                    <label class="character-sheet__text-line-label">NAME</label>
+                  </div>
+                  <div id="armor__base-thresholds" class="weapon__trait-range">
+                    <input id="active-armor-base-thresholds" class="character-sheet__text-line weapon__trait-range-input" >
+                    <label class="character-sheet__text-line-label weapon__trait-range-label">BASE THRESHOLDS</label>
+                  </div>
+                  <div id="armor__base-score"  class="weapon__damage-type">
+                    <input id="active-armor-base-score" class="character-sheet__text-line weapon__damage-type-input">
+                    <label class="character-sheet__text-line-label weapon__damage-type-label">BASE SCORE</label>
+                  </div>
+                </div>
+                <div class="weapon__feature-box">
+                  <input id="active-armor-feature" class="character-sheet__text-line">
+                  <label class="character-sheet__text-line-label">FEATURE</label>
+                </div>
+              </div>
+            </div>
+
+            <!--Gold/Inventory-->
+            <div id="inventory-gold__container" class="character-sheet-body__container">
+
+              <!--gold-->
+              <div id="gold__container">
+                <div id="gold__title"><p class="weapon-title__main">GOLD</p></div>
+                <div id="gold__box">
+                  <div id="handful__box">
+                    <img src="./images/Handfuls-Img.png" height="20px">
+                    <label class="character-sheet__text-line-label gold-inv__label">HANDFULS</label>
+                  </div>
+                  <div id="bags__box">
+                    <img src="./images/Bags-Img.png" height="30px">
+                    <label class="character-sheet__text-line-label gold-inv__label">BAGS</label>
+                  </div>
+                  <div id="chest__box">
+                    <img src="./images/Chest-Img.png" height="30px" width="30px">
+                    <label class="character-sheet__text-line-label gold-inv__label">CHEST</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div> <!-- End of Right-->
+        </div>
+
       </div>
     </div>
-  </div>
+  
+
+
+
+    <!-- CHAT LOG + DICE ROLLER-->
+    <div class="chat-container">
+      <div id="dice-roller__container">
+        <div id="chat-window" class="chat-window"></div>
+        <div id="dice__tray">
+          <div class="dice-tray">
+            <button class="dice_button">D4</button>
+            <button class="dice_button">D6</button>
+            <button class="dice_button">D8</button>
+            <button class="dice_button">D10</button>
+            <button class="dice_button">D12</button>
+            <button class="dice_button">D20</button>
+            <button class="dice_button">D100</button>
+
+          </div>
+          <div class="dice-tray">
+            <button class="dice_button">DUALITY</button>
+            <button class="dice_button">ADV</button>
+            <button class="dice_button">DIS</button>
+            <input id="modifyier___" type="text"> 
+            <button>Roll</button>
+          </div>
+        </div>
+      </div>  
+    </div>
 
 
 
