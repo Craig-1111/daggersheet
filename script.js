@@ -1,3 +1,7 @@
+const diceArray = [];
+
+
+
 //Saving Text inputs to LocalStorage
 document.querySelectorAll('input').forEach(input => {
   const key = input.id;
@@ -117,6 +121,125 @@ function setupMouseTooltip(className, tooltipText) {
     });
   });
 }
+
+
+
+// dice roller? 
+
+// Put them into the array as an object 
+// Object would have 
+// name 
+// sides
+// hope? 
+// GM adv
+// Button to the array + display
+// Roll initiates calculations 
+
+
+
+
+function diceSides(diceType){
+  if (diceType === "hope" || diceType === "fear"){
+    return 12;
+  }
+  else if(diceType === "adv" || diceType === "dis"){
+    return 6;
+  }
+  else{
+    return Number(diceType.slice(1));
+  }
+}
+
+function diceAmount(diceType){
+  let diceObject = diceArray.find(die => die.type === diceType);
+
+  if (!diceObject){
+    return 1;
+  }
+  else{
+    return diceObject.amount++;
+  }
+}
+
+function diceHope(diceType){
+  if (diceType === "hope"){
+    return true
+  }
+  else{
+    return false
+  }
+}
+
+function diceFear(diceType){
+  if (diceType === "fear"){
+    return true
+  }
+  else{
+    return false
+  }
+}
+
+function createDiceObject(diceType){
+  const diceObject = {
+    type: diceType,
+    sides: diceSides(diceType),
+    amount: 1,
+    hope: diceHope(diceType),
+    fear: diceFear(diceType),
+  }
+
+  return diceObject;
+}
+
+function addDiceToArray(diceTypeRaw){
+  const diceType = diceTypeRaw.slice(9);
+  let diceObject = diceArray.find(die => die.type === diceType);
+
+  if (!diceObject){
+    diceArray.push(createDiceObject(diceType));
+  }
+  else{
+    diceObject.amount++;
+  }
+}
+
+
+function displayDiceArrayAsText (diceArray){
+  // Add some sorting function to make it look nice here
+
+  let textArray = [];
+
+  for (let i = 0; i < diceArray.length; i++){
+    textArray.push(`${diceArray[i].amount + diceArray[i].type}`);
+  }
+
+  return textArray.join(" + ");
+}
+
+document.querySelectorAll(".dice_button").forEach(button => {
+  button.addEventListener("click", function() {
+    const id = this.id;
+    addDiceToArray(id);
+    
+    // prob should be a callback somewhere but like I dunno dude 
+    document.getElementById("dice_array").textContent = displayDiceArrayAsText(diceArray);
+  });
+});
+
+document.querySelector(".dice_roll").forEach(button => {
+  button.addEventListener("click", function() {
+    // put stuff here 
+  });
+});
+
+function displayToConsole(text){
+  console.log(text)
+}
+
+
+
+
+
 
 
 
